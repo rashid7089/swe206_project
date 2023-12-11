@@ -18,7 +18,6 @@ public class Team {
 
     public Team(String teamName, Member leader, ArrayList<Project> projects){
         this.teamName = teamName;
-        this.members = members;
         this.leader = leader;
         this.projects = projects;
     }

@@ -23,4 +23,8 @@ public class Machine {
         p.reserve(this, r);
         return true;
     }
+
+    public ArrayList<Reservation> getMachineSchedule() {
+        return machineSchedule;
+    }
 }

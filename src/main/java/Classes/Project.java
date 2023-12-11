@@ -1,6 +1,5 @@
 package Classes;
 
-import java.sql.Date;
 import java.util.ArrayList;
 import java.util.HashMap;
 
@@ -27,5 +26,13 @@ public class Project {
 
     public HashMap<Machine, ArrayList<Reservation>> getMachines() {
         return machines;
+    }
+
+    public Status getStatus() {
+        return status;
+    }
+
+    public void setStatus(Status s) {
+        status = s;
     }
 }
