@@ -25,4 +25,24 @@ public class Team {
     public ArrayList<Project> getProjects() {
         return projects;
     }
+
+    public ArrayList<Member> getMembers () {
+        return members;
+    }
+
+    public String getName() {
+        return teamName;
+    }
+
+    public Member getLeader() {
+        return leader;
+    }
+
+    public boolean setLeader(Member m) {
+        if(members.contains(m)) {
+            leader = m;
+            return true;
+        }
+        return false;
+    }
 }

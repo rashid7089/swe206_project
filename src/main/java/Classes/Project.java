@@ -35,4 +35,8 @@ public class Project {
     public void setStatus(Status s) {
         status = s;
     }
+
+    public String getName() {
+        return projectName;
+    }
 }

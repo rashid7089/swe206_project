@@ -21,4 +21,11 @@ public class Member extends User {
         this.leaderIn = leaderIn;
     }
     
+    public ArrayList<Team> getTeams() {
+        return myTeam;
+    }
+
+    public ArrayList<Team> getLeaderIn() {
+        return leaderIn;
+    }
 }

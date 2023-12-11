@@ -27,4 +27,8 @@ public class Machine {
     public ArrayList<Reservation> getMachineSchedule() {
         return machineSchedule;
     }
+
+    public String getMachineName() {
+        return machineName;
+    }
 }

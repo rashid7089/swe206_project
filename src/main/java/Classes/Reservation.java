@@ -13,4 +13,8 @@ public class Reservation {
     public boolean conflict(Reservation r) {
         return finish.compareTo(r.start) < 0 || r.finish.compareTo(start) < 0;
     }
+
+    public Project getProject() {
+        return project;
+    }
 }
