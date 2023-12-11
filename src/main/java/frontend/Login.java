@@ -40,7 +40,7 @@ public class Login extends Application {
 
 
         // Styles ----------------- Do not touch -----------------
-        titleLabel.getStyleClass().add("login-title");
+        titleLabel.getStyleClass().add("title");
         usernameField.getStyleClass().add("input__primary");
         passwordField.getStyleClass().add("input__primary");
         signInButton.getStyleClass().add("button__primary");

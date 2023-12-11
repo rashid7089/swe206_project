@@ -1,0 +1,21 @@
+.sidebar {
+    -fx-background-color: #f5f5f5;
+}
+
+.sidebar__title {
+    -fx-text-fill: #374151;
+    -fx-font-size: 26px;
+    -fx-font-weight: 800;
+}
+
+.sidebar__button {
+    -fx-background-color: transparent;
+    -fx-text-fill: #374151;
+    -fx-pref-width: 280px;
+    -fx-padding: 15px;
+    -fx-text-alignment: left;
+}
+
+.sidebar__button--active {
+    -fx-background-color: rgba(55, 65, 81, 0.3);
+}

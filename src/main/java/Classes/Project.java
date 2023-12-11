@@ -12,6 +12,13 @@ public class Project {
     private Team team;
 
 
+
+    public Project(String projectName){ // for creating project without team, delete it later
+        this.projectName = projectName;
+        machines = new HashMap<>();
+        status = Status.inProgress;
+    }
+
     public Project(String projectName, Team team){
         this.projectName = projectName;
         this.team = team;
