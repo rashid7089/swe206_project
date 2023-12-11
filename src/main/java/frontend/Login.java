@@ -52,11 +52,12 @@ public class Login extends Application {
         VBox layout = new VBox(10);
         layout.getChildren().addAll(titleLabel, usernameField, passwordField, signInButton, errorLabel);
         layout.setPadding(new Insets(20));
-        layout.getStyleClass().add("container");
+        layout.getStyleClass().add("container");  // Style --- Do not touch
+
 
         // Create a resizable StackPane
         StackPane root = new StackPane();
-        root.getStyleClass().add("main-container");
+        root.getStyleClass().add("main-container"); // Style --- Do not touch
         root.getChildren().add(layout);
 
         // Create scene
