@@ -1,0 +1,29 @@
+.main-container {
+    -fx-alignment: center;
+    -fx-background-color: #000000;
+}
+
+.container {
+    -fx-alignment: center;
+    -fx-background-color: #f4f4f4;
+    -fx-max-width: 400px;
+    -fx-width: 200px;
+}
+
+.login-title {
+    -fx-font-size: 24px;
+    -fx-font-weight: bold;
+}
+
+.input__primary {
+    -fx-padding: 8px;
+    -fx-font-size: 14px;
+    -fx-prompt-text-fill: gray;
+    -fx-background-color: #ffffff;
+    -fx-border-width: 1px;
+    -fx-border-color: #cccccc;
+    -fx-border-radius: 5px;
+    -fx-focus-color: #4d90fe;
+    -fx-faint-focus-color: #4d90fe;
+    -fx-max-width: 300px;
+}
