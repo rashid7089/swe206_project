@@ -15,7 +15,7 @@ public class Team {
         this.teamName = teamName;
         teamList.put(teamName, this);
     }
-    
+
     public ArrayList<Project> getProjects() {
         return projects;
     }
@@ -62,5 +62,9 @@ public class Team {
 
     public void addProject(Project p) {
         projects.add(p);
+    }
+
+    public void removeProject(Project p) {
+        projects.remove(p);
     }
 }

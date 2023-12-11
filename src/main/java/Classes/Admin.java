@@ -22,7 +22,22 @@ public class Admin extends User {
         t.addProject(p);
         return true;
     }
-    
+
+    public boolean removeProject(Project p) {
+        if(!Project.projects.containsValue(p))
+            return false;
+        p.getTeam().removeProject(p);
+        Project.projects.remove(p.getName());
+        return true;
+    }
+
+    public boolean addMachine(String name) {
+        if(Machine.machineList.containsKey(name))
+            return false;
+        new Machine(name);
+        return true;
+    }
+
     public boolean deleteMachine(Machine m) {
         if(Machine.machineList.containsKey(m.getMachineName())) {
             Machine.machineList.remove(m.getMachineName());
@@ -34,5 +49,13 @@ public class Admin extends User {
             return true;
         }
         return false;
+    }
+
+    public boolean changeProjectTeam(Project p, Team oldTeam, Team newTeam) {
+        if(!oldTeam.getProjects().contains(p))
+            return false;
+        oldTeam.removeProject(p);
+        newTeam.addProject(p);
+        return true;
     }
 }

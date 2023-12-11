@@ -9,7 +9,7 @@ public class Project {
     private String projectName;
     private Status status;
     private HashMap<Machine, ArrayList<Reservation>> machines;
-    Team team;
+    private Team team;
 
 
     public Project(String projectName, Team team){
@@ -40,5 +40,9 @@ public class Project {
 
     public String getName() {
         return projectName;
+    }
+
+    public Team getTeam() {
+        return team;
     }
 }
