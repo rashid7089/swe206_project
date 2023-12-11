@@ -1,3 +1,5 @@
+package Classes;
+
 public class User {
     private String user_name, password;
     private int id;
