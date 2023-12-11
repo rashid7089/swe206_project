@@ -1,25 +1,19 @@
 package Classes;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 
 public class Team {
-    public static ArrayList<Team> teamList = new ArrayList<>();
+    public static HashMap<String, Team> teamList = new HashMap<>();
     private String teamName;
     private ArrayList<Member> members;
     private Member leader;
     private ArrayList<Project> projects;
 
-
     public Team(String teamName, Member leader){
         this.leader = leader;
         this.teamName = teamName;
-        teamList.add(this);
-    }
-
-    public Team(String teamName, Member leader, ArrayList<Project> projects){
-        this.teamName = teamName;
-        this.leader = leader;
-        this.projects = projects;
+        teamList.put(teamName, this);
     }
     
     public ArrayList<Project> getProjects() {
@@ -40,9 +34,33 @@ public class Team {
 
     public boolean setLeader(Member m) {
         if(members.contains(m)) {
+            leader.removeLeader(this);
             leader = m;
+            leader.addLeader(this);
             return true;
         }
         return false;
+    }
+
+    public boolean addMember(Member m) {
+        if(members.contains(m))
+            return false;
+        members.add(m);
+        m.addTeam(this);
+        return true;
+    }
+
+    public boolean removeMember(Member m) {
+        if(m.equals(leader))
+            return false;
+        if(!members.contains(m))
+            return false;
+        members.remove(m);
+        m.removeTeam(this);
+        return true;
+    }
+
+    public void addProject(Project p) {
+        projects.add(p);
     }
 }

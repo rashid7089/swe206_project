@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 
 public class Project {
+    public static HashMap<String, Project> projects = new HashMap<>();
     public static enum Status{inProgress, finished, canceled};
     private String projectName;
     private Status status;
@@ -16,6 +17,7 @@ public class Project {
         this.team = team;
         machines = new HashMap<>();
         status = Status.inProgress;
+        projects.put(projectName, this);
     }
 
     public void reserve(Machine machine, Reservation r) {

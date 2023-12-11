@@ -28,4 +28,20 @@ public class Member extends User {
     public ArrayList<Team> getLeaderIn() {
         return leaderIn;
     }
+
+    public void addTeam(Team t) {
+        myTeam.add(t);
+    }
+
+    public void removeTeam(Team t) {
+        myTeam.remove(t);
+    }
+
+    public void addLeader(Team t) {
+        leaderIn.add(t);
+    }
+
+    public void removeLeader(Team t) {
+        leaderIn.remove(t);
+    }
 }

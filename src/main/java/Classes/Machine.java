@@ -1,17 +1,18 @@
 package Classes;
 
 import java.sql.Date;
+import java.util.HashMap;
 import java.util.ArrayList;
 
 public class Machine {
-    public static ArrayList<Machine> machineList = new ArrayList<>();
+    public static HashMap<String, Machine> machineList = new HashMap<>();
     private String machineName;
     private ArrayList<Reservation> machineSchedule;
 
     public Machine(String machineName){
         this.machineName = machineName;
         machineSchedule = new ArrayList<>();
-        machineList.add(this);
+        machineList.put(machineName, this);
     }
     public boolean reserve(Project p, Date s, Date f) {
         Reservation r = new Reservation(p, s, f);
