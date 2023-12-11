@@ -1,20 +1,38 @@
 package Classes;
 
-import java.sql.Date;
+import java.util.ArrayList;
 import java.util.HashMap;
 
 public class Project {
-    
-    private String projectName, status;
-    private HashMap<Machine, Date> machines;
+    public static enum Status{inProgress, finished, canceled};
+    private String projectName;
+    private Status status;
+    private HashMap<Machine, ArrayList<Reservation>> machines;
     Team team;
 
 
-    public Project(String projectName, Team team, HashMap<Machine, Date> machines, String status){
+    public Project(String projectName, Team team){
         this.projectName = projectName;
         this.team = team;
-        this.machines = machines;
-        this.status = status;
+        machines = new HashMap<>();
+        status = Status.inProgress;
+    }
+
+    public void reserve(Machine machine, Reservation r) {
+        if(!machines.containsKey(machine))
+            machines.put(machine,new ArrayList<>());
+        machines.get(machine).add(r);
+    }
+
+    public HashMap<Machine, ArrayList<Reservation>> getMachines() {
+        return machines;
+    }
+
+    public Status getStatus() {
+        return status;
+    }
+
+    public void setStatus(Status s) {
+        status = s;
     }
 }
-

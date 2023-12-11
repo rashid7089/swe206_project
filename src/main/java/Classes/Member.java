@@ -7,8 +7,6 @@ public class Member extends User {
     private ArrayList<Team> myTeam;
     private ArrayList<Team> leaderIn;
 
-
-
     public Member(String user_name, String password, int id) {
         super(user_name, password, id);
         
