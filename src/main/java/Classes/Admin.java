@@ -2,6 +2,7 @@ package Classes;
 
 public class Admin extends User {
     public static Admin admin;
+
     public Admin(String user_name, String password, String id) {
         super(user_name, password);
         admin = this;
@@ -13,6 +14,10 @@ public class Admin extends User {
         Team t = new Team(name, leader);
         leader.addTeam(t);
         leader.addLeader(t);
+        return true;
+    }
+
+    public boolean isAdmin() {
         return true;
     }
 
