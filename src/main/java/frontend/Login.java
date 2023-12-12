@@ -34,17 +34,24 @@ public class Login extends StackPane {
 
         // sign in button
         Button signInButton = new Button("Sign In"); // call Auth
-        signInButton.setOnAction(event -> {
-            boolean result = User.login(usernameField.getText(), passwordField.getText());
-            if (result) {
-                usernameField.setText("");
-                Main.setPage("Projects");
-            }
-            passwordField.setText("");
-        });
+
 
         // error label
         Label errorLabel = new Label("Error: username or password is wrong");
+        errorLabel.setVisible(false);
+
+
+        signInButton.setOnAction(event -> {
+            User result = User.login(usernameField.getText(), passwordField.getText());
+            if (result != null) {
+                usernameField.setText("");
+                passwordField.setText("");
+                Main.loged_user = result;
+                Main.setPage("Projects");
+            }
+            passwordField.setText("");
+            errorLabel.setVisible(true);
+        });
 
         // Styles ----------------- Do not touch -----------------
         titleLabel.getStyleClass().add("title");

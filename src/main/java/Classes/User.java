@@ -9,6 +9,7 @@ import java.util.Scanner;
 public class User {
     private String user_name, password;
     private static HashMap<String,String> userAuth = new HashMap<>(); //
+    public static HashMap<String,User> userObjects = new HashMap<>(); //
 
     public User(String user_name, String password){
         this.user_name = user_name;
@@ -16,9 +17,9 @@ public class User {
         userAuth.put(user_name, password);
     }
 
-    public static boolean login(String user, String pass) {
-        if (userAuth.containsKey(user)) return userAuth.get(user).equals(pass);
-        return false;
+    public static User login(String user, String pass) {
+        if (userAuth.containsKey(user) && userAuth.get(user).equals(pass)) return userObjects.get(user);
+        return null;
     }
 
     public boolean isAdmin() {
