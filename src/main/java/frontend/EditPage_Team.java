@@ -1,10 +1,10 @@
 package frontend;
 
+import Classes.Member;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.geometry.Insets;
-import javafx.scene.control.Button;
-import javafx.scene.control.Label;
-import javafx.scene.control.SplitPane;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
@@ -28,30 +28,48 @@ public class EditPage_Team extends BorderPane {
         layout.getChildren().add(subtitleLabel);
 
 
-        ArrayList<String> inputFields = new ArrayList<>();
-        inputFields.add("TeamName");
-
-
         //#region fields generator ------------------ ---------
-        int counter = 1;
-        HBox currentBox = new HBox(2);
-        currentBox.setSpacing(20);
 
-        for(String field: inputFields) {
-            TextField uField = new TextField(); /// field
-            uField.setPromptText(field);
-            uField.getStyleClass().add("input__primary");
-            uField.getStyleClass().add("input__primary--mxWidth");
+        TextField uField_1 = new TextField(); // field
+        uField_1.setPromptText("TeamName");
+        uField_1.getStyleClass().addAll("input__primary", "input__primary--mxWidth");
+        layout.getChildren().add(uField_1);
 
-            currentBox.getChildren().add(uField);
-            if (counter%2==0) {
-                layout.getChildren().add(currentBox);
-                currentBox = new HBox(2);
-                currentBox.setSpacing(20);
-            }
-            counter++;
-        }
-        layout.getChildren().add(currentBox);
+
+        // Create a select boxs to select members
+        ComboBox<String> leader = new ComboBox<>();
+        ComboBox<String> member_1 = new ComboBox<>();
+        ComboBox<String> member_2 = new ComboBox<>();
+        ComboBox<String> member_3 = new ComboBox<>();
+
+
+        //#region don't change ---------------------------------
+        // styles Don't touch
+        leader.getStyleClass().addAll("input__primary", "input__primary--mxWidth");
+        member_1.getStyleClass().addAll("input__primary", "input__primary--mxWidth");
+        member_2.getStyleClass().addAll("input__primary", "input__primary--mxWidth");
+        member_3.getStyleClass().addAll("input__primary", "input__primary--mxWidth");
+
+        // Create a list members names
+        ObservableList<String> members_options = FXCollections.observableArrayList(Member.memberList.keySet());
+
+        leader.setItems(members_options);
+        leader.setValue("add a Leader");
+        layout.getChildren().add(leader);
+
+        member_1.setItems(members_options);
+        member_1.setValue("add a Member");
+        layout.getChildren().add(member_1);
+
+        member_2.setItems(members_options);
+        member_2.setValue("add a second Member");
+        layout.getChildren().add(member_2);
+
+        member_3.setItems(members_options);
+        member_3.setValue("add a third Member");
+        layout.getChildren().add(member_3);
+
+        //#endregion
 
         // update button
         Button updateButton = new Button("Update");
