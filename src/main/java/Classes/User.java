@@ -16,12 +16,24 @@ public class User {
         this.password = password;
     }
 
-    public static User login(String user, String pass) {
-        if (userAuth.containsKey(user) && userAuth.get(user).equals(pass)) return userObjects.get(user);
-        return null;
+    public String getUser_name() {
+        return user_name;
     }
-    public boolean isAdmin() {
-        return false;
+
+    public String getPassword() {
+        return password;
+    }
+
+    public static User login(String user, String pass) {
+        if(user.equals(Admin.admin.getUser_name())) {
+            if (pass.equals(Admin.admin.getPassword()))
+                return Admin.admin;
+        }
+        if(Member.memberList.containsKey(user)) {
+            if(Member.memberList.get(user).getPassword().equals(pass))
+                return Member.memberList.get(user);
+        }
+        return null;
     }
     @Override
     public String toString() {
