@@ -49,6 +49,11 @@ public class Machine {
             }
         }
     }
+
+    public String getName() {
+        return machineName;
+    }
+
     @Override
     public String toString(){
         return machineName;

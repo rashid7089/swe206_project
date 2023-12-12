@@ -54,6 +54,6 @@ public class Member extends User {
     }
     @Override
     public String toString(){
-        return name;
+        return super.toString() + '\n' + name;
     }
 }

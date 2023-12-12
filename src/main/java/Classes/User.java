@@ -17,18 +17,33 @@ public class User {
         return user.equals(user_name) & pass.equals(password);
     }
 
+    @Override
+    public String toString() {
+        return user_name + " " + password;
+    }
+
     public static void load() throws FileNotFoundException {
         Scanner in = new Scanner(new File("data/users.txt"));
-        new Admin(in.next(), in.next(), in.next());
+        new Admin(in.next(), in.next());
         while(in.hasNext())
             new Member(in.next(), in.nextLine().trim(), in.nextLine());
         in.close();
         Team.load();
     }
 
+    public static void save() throws FileNotFoundException {
+        PrintWriter pw = new PrintWriter(new File("data/users.txt"));
+        pw.println(Admin.admin.toString());
+        for(Member m: Member.memberList.values())
+            pw.println(m.toString());
+        pw.close();
+        Team.save();
+    }
+
     public static void main(String[] args) {
-        try{
+        try {
             load();
+            save();
         } catch (FileNotFoundException ex) {
             System.out.println("error");
         }

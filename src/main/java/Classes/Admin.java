@@ -2,7 +2,7 @@ package Classes;
 
 public class Admin extends User {
     public static Admin admin;
-    public Admin(String user_name, String password, String id) {
+    public Admin(String user_name, String password) {
         super(user_name, password);
         admin = this;
     }

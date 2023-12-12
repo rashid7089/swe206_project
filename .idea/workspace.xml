@@ -6,11 +6,12 @@
   <component name="ChangeListManager">
     <list default="true" id="abe20fe9-d84c-4f69-aa1e-41cf5faa25e3" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/frontend/EditPage_Machine.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/frontend/EditPage_Machine.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/frontend/Machines.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/frontend/Machines.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/frontend/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/frontend/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/frontend/Projects.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/frontend/Projects.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/frontend/Teams.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/frontend/Teams.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/users.txt" beforeDir="false" afterPath="$PROJECT_DIR$/data/users.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Classes/Admin.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Classes/Admin.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Classes/Machine.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Classes/Machine.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Classes/Member.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Classes/Member.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Classes/Team.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Classes/Team.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Classes/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Classes/User.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -30,6 +31,26 @@
     <key name="CopyClassDialog.RECENTS_KEY">
       <recent name="frontend" />
     </key>
+  </component>
+  <component name="RunManager">
+    <configuration name="User" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Classes.User" />
+      <module name="swe206_project" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="Classes.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.User" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="TaskManager">
     <servers />
