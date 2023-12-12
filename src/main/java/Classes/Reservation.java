@@ -9,7 +9,7 @@ public class Reservation {
         finish = f;
     }
     public boolean conflict(Reservation r) {
-        return finish.compareTo(r.start) < 0 || r.finish.compareTo(start) < 0;
+        return finish.compareTo(r.start) > 0 & r.finish.compareTo(start) > 0;
     }
 
     public Project getProject() {
@@ -18,6 +18,6 @@ public class Reservation {
 
     @Override
     public String toString() {
-        return start.toString() + ' ' + finish.toString();
+        return project.getName() + '\n' + start.toString() + ' ' + finish.toString();
     }
 }
