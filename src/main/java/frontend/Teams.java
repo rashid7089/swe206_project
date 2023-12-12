@@ -54,12 +54,14 @@ public class Teams extends BorderPane {
                 Label titleLabel = new Label(team.getName());
                 Label leaderLabel = new Label("Leader: " + team.getLeader());
                 Label projectsLabel = new Label("Projects: " + team.getNumberOfProjects());
+                Label membersLabel = new Label("Members: " + team.getMembers().toString());
                 Button detailsButton = new Button("More Details");
 
                 // Styles ----------------- Do not touch -----------------
                 titleLabel.getStyleClass().add("list__item__title");
                 leaderLabel.getStyleClass().add("list__item__text");
                 projectsLabel.getStyleClass().add("list__item__text");
+                membersLabel.getStyleClass().add("list__item__text");
                 detailsButton.getStyleClass().add("list__item__button");
 //                detailsButton.getStyleClass().add("btn");
 
@@ -76,7 +78,7 @@ public class Teams extends BorderPane {
                 // Layout the cell content
                 BorderPane cellPane = new BorderPane();
                 cellPane.setTop(titleLabel);
-                hbox.getChildren().addAll(leaderLabel, projectsLabel);
+                hbox.getChildren().addAll(leaderLabel, projectsLabel, membersLabel);
                 cellPane.setLeft(hbox);
 //                cellPane.setRight(detailsButton);
 

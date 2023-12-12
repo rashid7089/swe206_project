@@ -3,20 +3,26 @@ package Classes;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.PrintWriter;
+import java.util.HashMap;
 import java.util.Scanner;
 
 public class User {
     private String user_name, password;
+    private static HashMap<String,String> userAuth = new HashMap<>(); //
+    public static HashMap<String,User> userObjects = new HashMap<>(); //
 
     public User(String user_name, String password){
         this.user_name = user_name;
         this.password = password;
     }
 
-    public boolean login(String user, String pass) {
-        return user.equals(user_name) & pass.equals(password);
+    public static User login(String user, String pass) {
+        if (userAuth.containsKey(user) && userAuth.get(user).equals(pass)) return userObjects.get(user);
+        return null;
     }
-
+    public boolean isAdmin() {
+        return false;
+    }
     @Override
     public String toString() {
         return user_name + " " + password;
