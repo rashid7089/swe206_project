@@ -11,25 +11,25 @@ import javafx.scene.layout.VBox;
 
 import java.util.ArrayList;
 
-public class EditPage_Machine extends BorderPane {
+public class EditPage_Team extends BorderPane {
 
 
-    public EditPage_Machine() {
+    public EditPage_Team() {
 
         // layout
         VBox layout = new VBox(10);
         layout.setPadding(new Insets(20));
 
         // title
-        Label titleLabel = new Label("New Machine");
+        Label titleLabel = new Label("New Team");
         layout.getChildren().add(titleLabel);
 
-        Label subtitleLabel = new Label("add a new Machine");
+        Label subtitleLabel = new Label("add a new Team");
         layout.getChildren().add(subtitleLabel);
 
 
         ArrayList<String> inputFields = new ArrayList<>();
-        inputFields.add("machineName");
+        inputFields.add("TeamName");
 
 
         //#region fields generator ------------------ ---------

@@ -20,6 +20,7 @@ public class Projects extends BorderPane {
 
     public Projects(ArrayList<Project> all_projects) {
 
+
         // ---------- Projects Left menu -----------------------------
         ListView<Project> projectListView = new ListView<>();
 
@@ -35,6 +36,11 @@ public class Projects extends BorderPane {
         Sidebar sidebar = new Sidebar("Projects");
 
         SplitPane splitPane = new SplitPane();
+
+        Label noPage = new Label("No Content to display");
+        noPage.getStyleClass().add("title");
+        if (all_projects.size() == 0) sub_sidebar = new VBox(noPage);
+
         splitPane.getItems().addAll(sidebar, sub_sidebar);
         splitPane.setDividerPositions(0.7);
         // Sidebar ------- -  --- -------------------------------------------------------

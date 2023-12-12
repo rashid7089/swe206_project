@@ -29,6 +29,10 @@ public class Machines extends BorderPane {
         VBox sub_sidebar = new VBox(data_listView);
         Sidebar sidebar = new Sidebar(Title);
 
+        Label noPage = new Label("No Content to display");
+        noPage.getStyleClass().add("title");
+        if (all_machines.size() == 0) sub_sidebar = new VBox(noPage);
+
         SplitPane splitPane = new SplitPane();
         splitPane.getItems().addAll(sidebar, sub_sidebar);
         splitPane.setDividerPositions(0.7);

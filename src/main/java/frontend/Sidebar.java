@@ -28,10 +28,8 @@ public class Sidebar extends VBox {
             if (a == currentPage) {
                 sidebarButton.getStyleClass().add("sidebar__button--active");
             }
-
-            getChildren().add(sidebarButton);
-
             sidebarButton.setOnAction(e-> Main.setPage(a)); //call setScence function based on the buttios pressed
+            getChildren().add(sidebarButton);
         }
         setAlignment(Pos.TOP_CENTER);
         setSpacing(10);

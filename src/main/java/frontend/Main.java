@@ -17,22 +17,6 @@ import java.util.ArrayList;
 public class Main extends Application {
 
 
-    //#region pages --------------------------------------------------------
-    private static Login loginPage;
-    private static Projects projectsPage;
-    private static Teams teamsPage;
-    private static Machines ourmachinesPage;
-    private static Machines machinesPage;
-
-
-    // edit pages
-    private static EditPage editpage ;
-    private static EditPage_Machine editpage_machine ;
-
-
-    //#endregion
-
-
     // Create the scene
     private static Scene login_scene;
     private static Scene projectPage_scene;
@@ -72,6 +56,7 @@ public class Main extends Application {
             primaryStage.setScene(editpage_machine_scene);
 
         }
+
     }
     @Override
     public void start(Stage primaryStage) throws IOException {
@@ -87,18 +72,19 @@ public class Main extends Application {
 //        Member user = new Member()
 
 
+
+
+        // TODO: change the following function to get user teams (or all teams if user is admin)
+        ArrayList<Team> teams_data = generateDumyTeamList();
+
         // demo data
         // TODO: change the following projects to what user can see
 //        ArrayList<Project> projects_data = user.allProject(); EXAMPLE
 
         ArrayList<Project> projects_data = new ArrayList<>();
-//            projects_data.add(new Project("Project A"));
-//            projects_data.add(new Project("Project B"));
-//            projects_data.add(new Project("Project C"));
-
-        // TODO: change the following function to get user teams (or all teams if user is admin)
-        ArrayList<Team> teams_data = generateDumyTeamList();
-
+//        projects_data.add(new Project("Project A", teams_data.get(0)));
+////        projects_data.add(new Project("Project B"));
+////        projects_data.add(new Project("Project C"));
 
         ArrayList<Machine> machineArrayList = new ArrayList<>();
         machineArrayList.add(new Machine("Machine1"));
@@ -107,15 +93,15 @@ public class Main extends Application {
 
 
         //#region pages --------------------------------------------------------
-        loginPage = new Login();
-        projectsPage = new Projects(projects_data);
-        teamsPage = new Teams(teams_data);
-        ourmachinesPage = new Machines(machineArrayList, "Our Reserved Machines");
-        machinesPage = new Machines(machineArrayList, "Machines");
+        Login loginPage = new Login();
+        Projects projectsPage = new Projects(projects_data);
+        Teams teamsPage = new Teams(teams_data);
+        Machines ourmachinesPage = new Machines(machineArrayList, "Our Reserved Machines");
+        Machines machinesPage = new Machines(machineArrayList, "Machines");
 
         // edit pages
-        editpage = new EditPage();
-        editpage_machine = new EditPage_Machine();
+        EditPage editpage = new EditPage();
+        EditPage_Machine editpage_machine = new EditPage_Machine();
 
 
         //#endregion
@@ -130,6 +116,7 @@ public class Main extends Application {
         editpage_machine_scene = new Scene(editpage_machine, Constants.laptopWidth, Constants.laptopHeight);
 
 
+        System.out.println(projectPage_scene);
         String[] cssClasses = {getClass().getResource("styles.css").toExternalForm(), getClass().getResource("sidebar.css").toExternalForm()};
 
         // load Styles Files
@@ -139,10 +126,10 @@ public class Main extends Application {
         ourmachinesPage_scene.getStylesheets().addAll(cssClasses);
         machinesPage_scene.getStylesheets().addAll(cssClasses);
         editpage_scene.getStylesheets().addAll(cssClasses);
-
+        editpage_machine_scene.getStylesheets().addAll(cssClasses);
         // Set up the stage
         // TODO: make the scene page dynamic (changeable)
-        primaryStage.setScene(login_scene);
+        primaryStage.setScene(projectPage_scene);
         primaryStage.show();
     }
 
