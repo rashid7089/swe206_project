@@ -39,15 +39,11 @@ public class Main extends Application {
             primaryStage.setScene(teamsPage_scene);
 
         }
-        else if (page.equals("Logout")){
-//            primaryStage.setScene(login_scene);
-
-        }
-        else if (page.equals("OurMachines")) {
+        else if (page.equals("Our Reserved Machines")) {
             primaryStage.setScene(ourmachinesPage_scene);
 
         }
-        else if(page.equals("Editpage")){
+        else if(page.equals("Edit page")){
             primaryStage.setScene(editpage_scene);
 
         }
@@ -55,7 +51,7 @@ public class Main extends Application {
             primaryStage.setScene(machinesPage_scene);
 
         }
-        else if(page.equals("Editpage_machines")){
+        else if(page.equals("Edit page machines")){
             primaryStage.setScene(editpage_machine_scene);
 
         }
