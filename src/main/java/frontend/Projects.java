@@ -85,7 +85,7 @@ public class Projects extends BorderPane {
                 cellPane.setTop(titleLabel);
                 hbox.getChildren().addAll(statusLabel, teamLabel);
                 cellPane.setLeft(hbox);
-                cellPane.setRight(detailsButton);
+//                cellPane.setRight(detailsButton);
 
                 setText(null);
                 setGraphic(cellPane);

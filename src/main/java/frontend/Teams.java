@@ -78,7 +78,7 @@ public class Teams extends BorderPane {
                 cellPane.setTop(titleLabel);
                 hbox.getChildren().addAll(leaderLabel, projectsLabel);
                 cellPane.setLeft(hbox);
-                cellPane.setRight(detailsButton);
+//                cellPane.setRight(detailsButton);
 
                 setText(null);
                 setGraphic(cellPane);
