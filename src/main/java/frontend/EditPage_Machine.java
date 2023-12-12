@@ -28,30 +28,13 @@ public class EditPage_Machine extends BorderPane {
         layout.getChildren().add(subtitleLabel);
 
 
-        ArrayList<String> inputFields = new ArrayList<>();
-        inputFields.add("machineName");
-
-
         //#region fields generator ------------------ ---------
-        int counter = 1;
-        HBox currentBox = new HBox(2);
-        currentBox.setSpacing(20);
 
-        for(String field: inputFields) {
-            TextField uField = new TextField(); /// field
-            uField.setPromptText(field);
-            uField.getStyleClass().add("input__primary");
-            uField.getStyleClass().add("input__primary--mxWidth");
+        TextField uField_1 = new TextField(); // field
+        uField_1.setPromptText("machineName");
+        uField_1.getStyleClass().addAll("input__primary", "input__primary--mxWidth");
+        layout.getChildren().add(uField_1);
 
-            currentBox.getChildren().add(uField);
-            if (counter%2==0) {
-                layout.getChildren().add(currentBox);
-                currentBox = new HBox(2);
-                currentBox.setSpacing(20);
-            }
-            counter++;
-        }
-        layout.getChildren().add(currentBox);
 
         // update button
         Button updateButton = new Button("Update");
