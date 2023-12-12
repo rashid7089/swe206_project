@@ -17,24 +17,32 @@ import java.util.ArrayList;
 public class Main extends Application {
 
 
-   public static void setPage(Stage primaryStage, String page) {
-       if(page.equals("Projects")){
-//            primaryStage.setScene();
 
+    public static void setPage(String page) {
+       if(page.equals("Projects")){
+        vScene = projectPage_scene;
        }       
        else if (page.equals("Teams")){
+        vScene = teamsPage_scene;
 
        }
        else if (page.equals("Logout")){
-
+        vScene = login_scene;
        }
        else if (page.equals("Machines")) {
-        
+        vScene = ourmachinesPage_scene;
        }
        else{
-
+        vScene = machinesPage_scene;
        }
    }
+   static Scene login_scene;
+   static Scene projectPage_scene;
+   static Scene teamsPage_scene;
+   static Scene ourmachinesPage_scene;
+   static Scene machinesPage_scene;
+
+   static Scene vScene;
     @Override
     public void start(Stage primaryStage) throws IOException {
         primaryStage.setWidth(Constants.laptopWidth);
@@ -83,29 +91,30 @@ public class Main extends Application {
 
 
         // Create the scene
-        Scene login_scene = new Scene(loginPage, Constants.laptopWidth, Constants.laptopHeight);
-        Scene projectPage_scene = new Scene(projectsPage, Constants.laptopWidth, Constants.laptopHeight);
-        Scene teamsPage_scene = new Scene(teamsPage, Constants.laptopWidth, Constants.laptopHeight);
-        Scene ourmachinesPage_scene = new Scene(ourmachinesPage, Constants.laptopWidth, Constants.laptopHeight);
-        Scene machinesPage_scene = new Scene(machinesPage, Constants.laptopWidth, Constants.laptopHeight);
-        Scene editpage_scene = new Scene(editpage, Constants.laptopWidth, Constants.laptopHeight);
-        Scene editpage_machine_scene = new Scene(editpage_machine, Constants.laptopWidth, Constants.laptopHeight);
+        login_scene = new Scene(loginPage, Constants.laptopWidth, Constants.laptopHeight);
+        projectPage_scene = new Scene(projectsPage, Constants.laptopWidth, Constants.laptopHeight);
+        teamsPage_scene = new Scene(teamsPage, Constants.laptopWidth, Constants.laptopHeight);
+        ourmachinesPage_scene = new Scene(ourmachinesPage, Constants.laptopWidth, Constants.laptopHeight);
+        machinesPage_scene = new Scene(machinesPage, Constants.laptopWidth, Constants.laptopHeight);
+        editpage_scene = new Scene(editpage, Constants.laptopWidth, Constants.laptopHeight);
+        editpage_machine_scene = new Scene(editpage_machine, Constants.laptopWidth, Constants.laptopHeight);
 
 
 
         String[] cssClasses = {getClass().getResource("styles.css").toExternalForm(), getClass().getResource("sidebar.css").toExternalForm()};
 
         // load Styles Files
-        login_scene.getStylesheets().addAll(cssClasses);
-        projectPage_scene.getStylesheets().addAll(cssClasses);
-        teamsPage_scene.getStylesheets().addAll(cssClasses);
-        ourmachinesPage_scene.getStylesheets().addAll(cssClasses);
-        machinesPage_scene.getStylesheets().addAll(cssClasses);
-        editpage_scene.getStylesheets().addAll(cssClasses);
+         login_scene.getStylesheets().addAll(cssClasses);
+         projectPage_scene.getStylesheets().addAll(cssClasses);
+         teamsPage_scene.getStylesheets().addAll(cssClasses);
+         ourmachinesPage_scene.getStylesheets().addAll(cssClasses);
+         machinesPage_scene.getStylesheets().addAll(cssClasses);
+         editpage_scene.getStylesheets().addAll(cssClasses);
+         vScene = login_scene;
 
         // Set up the stage
         // TODO: make the scene page dynamic (changeable)
-        primaryStage.setScene(editpage_machine_scene);
+        primaryStage.setScene(vScene);
         primaryStage.show();
     }
 
