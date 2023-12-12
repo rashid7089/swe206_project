@@ -1,5 +1,6 @@
 package frontend;
 
+import Classes.Admin;
 import Classes.Machine;
 import Classes.Member;
 import Classes.Team;
@@ -47,6 +48,10 @@ public class ReserverMachine extends BorderPane {
         Month.getStyleClass().addAll("input__primary", "input__primary--mxWidth");
         Day.getStyleClass().addAll("input__primary", "input__primary--mxWidth");
 
+
+
+//        ArrayList<Team> teams;
+//        Member loged_user = (Member) Main.loged_user;
 
         // Create a list members names
         ObservableList<String> teams_options = FXCollections.observableArrayList(Team.teamList.keySet());

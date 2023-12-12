@@ -1,17 +1,21 @@
 package frontend;
 
+import Classes.Admin;
+import Classes.Member;
 import javafx.geometry.Pos;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.layout.VBox;
 
 import java.util.ArrayList;
+import java.util.List;
 
 
 public class Sidebar extends VBox {
 
     public Sidebar(String currentPage) {
-        String[] Titles = {"Projects", "Teams", "Machines", "Our Reserved Machines","Edit page","Edit page machines","Edit page project","Edit page team", "Reserve a Machine"};
+        ArrayList<String> Titles = Main.loged_user.allowedPages();
+
         getStyleClass().add("sidebar");
 
         Label titleLabel = new Label("SIDEBAR");

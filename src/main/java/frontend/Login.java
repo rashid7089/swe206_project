@@ -43,10 +43,12 @@ public class Login extends StackPane {
 
         signInButton.setOnAction(event -> {
             User result = User.login(usernameField.getText(), passwordField.getText());
+            System.out.println(result);
             if (result != null) {
                 usernameField.setText("");
                 passwordField.setText("");
                 Main.loged_user = result;
+                Main.LoadPages();
                 Main.setPage("Projects");
             }
             passwordField.setText("");
