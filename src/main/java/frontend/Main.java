@@ -49,18 +49,26 @@ public class Main extends Application {
 
        }       
        else if (page.equals("Teams")){
+        vScene = teamsPage_scene;
 
        }
        else if (page.equals("Logout")){
-
+        vScene = login_scene;
        }
        else if (page.equals("Machines")) {
-        
+        vScene = ourmachinesPage_scene;
        }
        else{
-
+        vScene = machinesPage_scene;
        }
    }
+   static Scene login_scene;
+   static Scene projectPage_scene;
+   static Scene teamsPage_scene;
+   static Scene ourmachinesPage_scene;
+   static Scene machinesPage_scene;
+
+   static Scene vScene;
     @Override
     public void start(Stage primaryStage) throws IOException {
         this.primaryStage = primaryStage;
@@ -121,12 +129,13 @@ public class Main extends Application {
         String[] cssClasses = {getClass().getResource("styles.css").toExternalForm(), getClass().getResource("sidebar.css").toExternalForm()};
 
         // load Styles Files
-        login_scene.getStylesheets().addAll(cssClasses);
-        projectPage_scene.getStylesheets().addAll(cssClasses);
-        teamsPage_scene.getStylesheets().addAll(cssClasses);
-        ourmachinesPage_scene.getStylesheets().addAll(cssClasses);
-        machinesPage_scene.getStylesheets().addAll(cssClasses);
-        editpage_scene.getStylesheets().addAll(cssClasses);
+         login_scene.getStylesheets().addAll(cssClasses);
+         projectPage_scene.getStylesheets().addAll(cssClasses);
+         teamsPage_scene.getStylesheets().addAll(cssClasses);
+         ourmachinesPage_scene.getStylesheets().addAll(cssClasses);
+         machinesPage_scene.getStylesheets().addAll(cssClasses);
+         editpage_scene.getStylesheets().addAll(cssClasses);
+         vScene = login_scene;
 
         // Set up the stage
         // TODO: make the scene page dynamic (changeable)
