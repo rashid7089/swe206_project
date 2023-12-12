@@ -50,7 +50,7 @@ public class Machines extends BorderPane {
                 setText(null);
                 setGraphic(null);
             } else {
-                Label titleLabel = new Label(machine.toString());
+                Label titleLabel = new Label(machine.getName());
                 Label machinesStatus = new Label("Reserved Status: Free");
                 Button detailsButton = new Button("More Details");
 
@@ -63,7 +63,7 @@ public class Machines extends BorderPane {
 
                 detailsButton.setOnAction(event -> {
                     // Handle button click, e.g., show more details
-                    System.out.println("Details for " + machine);
+                    System.out.println("Details for " + machine.getName());
                 });
 
 
