@@ -70,7 +70,7 @@ public class Project {
     }
 
     public static void save() throws FileNotFoundException {
-        PrintWriter pw = new PrintWriter(new File("data/projects_test.txt"));
+        PrintWriter pw = new PrintWriter(new File("data/projects.txt"));
         for(Project p: projects.values())
             pw.println(p);
         pw.close();

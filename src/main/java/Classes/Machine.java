@@ -57,7 +57,7 @@ public class Machine {
     }
 
     public static void save() throws FileNotFoundException {
-        PrintWriter pw = new PrintWriter(new File("data/machines_test.txt"));
+        PrintWriter pw = new PrintWriter(new File("data/machines.txt"));
         for(Machine m:machineList.values())
             pw.println(m.toString());
         pw.close();
