@@ -1,38 +1,33 @@
 package frontend;
 
 import Classes.Project;
-import javafx.application.Application;
-import javafx.beans.property.SimpleStringProperty;
+import Classes.Team;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
-import javafx.geometry.Insets;
-import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.layout.BorderPane;
-import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
-import javafx.stage.Stage;
 
 import java.util.ArrayList;
 
-public class Projects extends BorderPane {
+public class Teams extends BorderPane {
 
 
-    public Projects(ArrayList<Project> all_projects) {
+    public Teams(ArrayList<Team> all_teams) {
 
-        // ---------- Projects Left menu -----------------------------
-        ListView<Project> projectListView = new ListView<>();
+        // ---------- Teams Left menu -----------------------------
+        ListView<Team> data_listView = new ListView<>();
 
-        ObservableList<Project> projects = FXCollections.observableArrayList(all_projects);
+        ObservableList<Team> teams = FXCollections.observableArrayList(all_teams);
 
-        projectListView.setItems(projects);
-        projectListView.setCellFactory(param -> new ProjectListCell());
-        projectListView.setMinHeight(Constants.laptopHeight);
+        data_listView.setItems(teams);
+        data_listView.setCellFactory(param -> new DataListCell());
+        data_listView.setMinHeight(Constants.laptopHeight);
         // -----------------------------------------------------------
 
         // Sidebar ------- No need to modify anything here  -------------------------------
-        VBox sub_sidebar = new VBox(projectListView);
-        Sidebar sidebar = new Sidebar("Projects");
+        VBox sub_sidebar = new VBox(data_listView);
+        Sidebar sidebar = new Sidebar("Teams");
 
         SplitPane splitPane = new SplitPane();
         splitPane.getItems().addAll(sidebar, sub_sidebar);
@@ -42,19 +37,19 @@ public class Projects extends BorderPane {
         setCenter(splitPane);
     }
 
-    private static class ProjectListCell extends ListCell<Project> {
+    private static class DataListCell extends ListCell<Team> {
         @Override
-        protected void updateItem(Project project, boolean empty) {
-            super.updateItem(project, empty);
+        protected void updateItem(Team team, boolean empty) {
+            super.updateItem(team, empty);
 
-            if (empty || project == null) {
+            if (empty || team == null) {
                 setText(null);
                 setGraphic(null);
             } else {
                 VBox hbox = new VBox(10);
-                Label titleLabel = new Label(project.getName());
-                Label statusLabel = new Label("Status: " + project.getStatus());
-                Label teamLabel = new Label("Team: " + project.getTeam());
+                Label titleLabel = new Label(team.getName());
+                Label statusLabel = new Label("Leader: " + team.getLeader());
+                Label teamLabel = new Label("Projects: " + team.getNumberOfProjects());
                 Button detailsButton = new Button("More Details");
 
                 // Styles ----------------- Do not touch -----------------
@@ -70,7 +65,7 @@ public class Projects extends BorderPane {
 
                 detailsButton.setOnAction(event -> {
                     // Handle button click, e.g., show more details
-                    System.out.println("Details for " + project.getName());
+                    System.out.println("Details for " + team.getName());
                 });
 
 

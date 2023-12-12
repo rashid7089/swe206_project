@@ -14,6 +14,10 @@ import javafx.stage.Stage;
 public class Login extends StackPane {
 
 //    @Override
+
+//    public boolean auth(String username, String password) {
+//
+//    }
     public Login() {
 
         // title
@@ -28,7 +32,7 @@ public class Login extends StackPane {
         passwordField.setPromptText("Password");
 
         // sign in button
-        Button signInButton = new Button("Sign In");
+        Button signInButton = new Button("Sign In"); // call Auth
 
         // error label
         Label errorLabel = new Label("Error: password is wrong");

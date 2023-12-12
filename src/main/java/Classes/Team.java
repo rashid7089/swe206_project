@@ -72,6 +72,10 @@ public class Team {
         projects.remove(p);
     }
 
+    public int getNumberOfProjects() {
+        return projects.size();
+    }
+
     public static void load() throws FileNotFoundException {
         Scanner in = new Scanner(new File("data/teams.txt"));
         while(in.hasNext()) {

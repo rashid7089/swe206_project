@@ -11,6 +11,9 @@ public class Member extends User {
 
     public Member(String user_name, String password, String id, String name) {
         super(user_name, password, id);
+        myTeam = new ArrayList<>();
+        leaderIn = new ArrayList<>();
+
         this.name = name;
         memberList.put(id, this);
     }
@@ -32,6 +35,7 @@ public class Member extends User {
     }
 
     public void addLeader(Team t) {
+        System.out.println(t);
         leaderIn.add(t);
     }
 
