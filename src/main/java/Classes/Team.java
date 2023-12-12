@@ -16,8 +16,10 @@ public class Team {
     public Team(String teamName, Member leader){
         this.leader = leader;
         leader.addLeader(this);
+        leader.addTeam(this);
         this.teamName = teamName;
         members = new ArrayList<>();
+        members.add(leader);
         projects = new ArrayList<>();
         teamList.put(teamName, this);
     }
@@ -83,7 +85,8 @@ public class Team {
         while(in.hasNext()) {
             String name = in.nextLine();
             Scanner members = new Scanner(in.nextLine());
-            Team t = new Team(name, Member.memberList.get(members.next()));
+            String s = members.next();
+            Team t = new Team(name, Member.memberList.get(s));
             while(members.hasNext())
                 t.addMember(Member.memberList.get(members.next()));
         }

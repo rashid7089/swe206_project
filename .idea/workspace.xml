@@ -5,22 +5,22 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8bd04ad4-515e-48b5-b1e1-766bc9fc29f4" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/old/src/Admin.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/old/src/FrontEnd/Main.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/old/src/Machine.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/old/src/Member.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/old/src/Project.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/old/src/Reservation.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/old/src/Team.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/old/src/User.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/old/swe206_project.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/frontend/HelloApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/frontend/HelloApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/module-info.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/module-info.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Classes/Machine.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Classes/Machine.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Classes/Member.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Classes/Member.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Classes/Project.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Classes/Project.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Classes/Team.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Classes/Team.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Classes/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Classes/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/data/machines.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/data/projects.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/data/teams.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/data/users.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/frontend/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/frontend/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/data/machines.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/data/projects.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/data/teams.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/data/users.txt" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -37,13 +37,9 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="MavenImportPreferences">
-    <option name="generalSettings">
-      <MavenGeneralSettings>
-        <option name="useMavenConfig" value="true" />
-      </MavenGeneralSettings>
-    </option>
-  </component>
+  <component name="ProjectColorInfo"><![CDATA[{
+  "associatedIndex": 3
+}]]></component>
   <component name="ProjectId" id="2ZP5D7AYFS9kYm5XodjbIYy3Gqf" />
   <component name="ProjectLevelVcsManager">
     <ConfirmationsSetting value="1" id="Add" />
@@ -54,18 +50,19 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
     "git-widget-placeholder": "main",
-    "last_opened_file_path": "/Users/rashedjafry/Documents/GitHub/swe206_project",
+    "last_opened_file_path": "C:/Users/engmr/OneDrive/Desktop/KFUPM/SWE 206/swe206_project",
     "nodejs_package_manager_path": "npm",
-    "project.structure.last.edited": "Project",
+    "project.structure.last.edited": "SDKs",
     "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.0",
+    "project.structure.side.proportion": "0.2",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Application.User">
     <configuration name="HelloApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="ALTERNATIVE_JRE_PATH" value="20" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
@@ -81,8 +78,22 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="User" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Classes.User" />
+      <module name="swe206_project" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="Classes.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.User" />
         <item itemvalue="Application.HelloApplication" />
       </list>
     </recent_temporary>
@@ -105,5 +116,41 @@
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/Classes/Machine.java</url>
+          <line>45</line>
+          <option name="timeStamp" value="7" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/Classes/Project.java</url>
+          <line>62</line>
+          <option name="timeStamp" value="8" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/Classes/Team.java</url>
+          <line>92</line>
+          <option name="timeStamp" value="9" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/Classes/User.java</url>
+          <line>30</line>
+          <option name="timeStamp" value="10" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/Classes/Team.java</url>
+          <line>88</line>
+          <option name="timeStamp" value="11" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/Classes/Team.java</url>
+          <line>16</line>
+          <option name="timeStamp" value="12" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

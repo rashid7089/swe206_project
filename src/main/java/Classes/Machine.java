@@ -41,7 +41,11 @@ public class Machine {
             Machine m = new Machine(in.nextLine());
             int resCount = in.nextInt();
             while(resCount-- > 0) {
-                m.reserve(Project.projects.get(in.nextLine()), new Date(in.nextInt(), in.nextInt(), in.nextInt(), in.nextInt()), new Date(in.nextInt(), in.nextInt(), in.nextInt(), in.nextInt()));
+                in.nextLine();
+                Project p = Project.projects.get(in.nextLine());
+                Date start = new Date(in.nextInt(), in.nextInt(), in.nextInt(), in.nextInt());
+                Date finish = new Date(in.nextInt(), in.nextInt(), in.nextInt(), in.nextInt());
+                m.reserve(p, start, finish);
             }
         }
     }

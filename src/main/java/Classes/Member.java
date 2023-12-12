@@ -35,7 +35,6 @@ public class Member extends User {
     }
 
     public void addLeader(Team t) {
-        System.out.println(t);
         leaderIn.add(t);
     }
 
@@ -45,5 +44,12 @@ public class Member extends User {
 
     public String getName() {
         return name;
+    }
+
+    public ArrayList<Project> getProjects() {
+        ArrayList<Project> projects = new ArrayList<>();
+        for(Team t: myTeam)
+            projects.addAll(t.getProjects());
+        return projects;
     }
 }

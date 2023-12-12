@@ -14,15 +14,10 @@ public class Project {
     private HashMap<Machine, ArrayList<Reservation>> machines;
     private Team team;
 
-    public Project(String projectName){ // for creating project without team, delete it later
-        this.projectName = projectName;
-        machines = new HashMap<>();
-        status = Status.inProgress;
-    }
-
     public Project(String projectName, Team team){
         this.projectName = projectName;
         this.team = team;
+        team.addProject(this);
         machines = new HashMap<>();
         status = Status.inProgress;
         projects.put(projectName, this);

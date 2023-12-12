@@ -2,6 +2,7 @@ package Classes;
 
 import java.io.File;
 import java.io.FileNotFoundException;
+import java.io.PrintWriter;
 import java.util.Scanner;
 
 public class User {
@@ -25,8 +26,16 @@ public class User {
         Scanner in = new Scanner(new File("data/users.txt"));
         new Admin(in.next(), in.next(), in.next());
         while(in.hasNext())
-            new Member(in.next(), in.next(), in.next(), in.nextLine());
+            new Member(in.next(), in.next(), in.nextLine().trim(), in.nextLine());
         in.close();
         Team.load();
+    }
+
+    public static void main(String[] args) {
+        try{
+            load();
+        } catch (FileNotFoundException ex) {
+            System.out.println("error");
+        }
     }
 }

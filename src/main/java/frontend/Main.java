@@ -37,9 +37,9 @@ public class Main extends Application {
 //        ArrayList<Project> projects_data = user.allProject(); EXAMPLE
 
         ArrayList<Project> projects_data = new ArrayList<>();
-            projects_data.add(new Project("Project A"));
-            projects_data.add(new Project("Project B"));
-            projects_data.add(new Project("Project C"));
+//            projects_data.add(new Project("Project A"));
+//            projects_data.add(new Project("Project B"));
+//            projects_data.add(new Project("Project C"));
 
         // TODO: change the following function to get user teams (or all teams if user is admin)
         ArrayList<Team> teams_data = generateDumyTeamList();

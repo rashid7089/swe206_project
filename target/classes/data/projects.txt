@@ -1,8 +1,0 @@
-project with name 1
-team1
-project with name 2
-team1
-p3
-team3
-p4
-team2
