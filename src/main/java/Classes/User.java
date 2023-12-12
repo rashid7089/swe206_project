@@ -72,4 +72,16 @@ public class User {
             System.out.println("error");
         }
     }
+
+    public ArrayList<Team> getTeams() {
+        return (ArrayList<Team>) Team.teamList.values();
+    }
+
+    public ArrayList<Project> getProjects() {
+        return (ArrayList<Project>) Project.projects.values();
+    }
+
+    public ArrayList<Machine> getMachines() {
+        return (ArrayList<Machine>) Machine.machineList.values();
+    }
 }

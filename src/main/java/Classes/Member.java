@@ -71,6 +71,15 @@ public class Member extends User {
             projects.addAll(t.getProjects());
         return projects;
     }
+
+    public ArrayList<Machine> getMachines() {
+        ArrayList<Machine> machines = new ArrayList<>();
+        for(Project p: getProjects())
+            for(Machine m: p.getMachines().keySet())
+                if(!machines.contains(m))
+                    machines.add(m);
+        return machines;
+    }
     @Override
     public String toString(){
         return super.toString() + '\n' + name;
