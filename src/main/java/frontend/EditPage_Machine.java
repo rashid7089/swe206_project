@@ -39,12 +39,13 @@ public class EditPage_Machine extends BorderPane {
 
         // add button
         Button addButton = new Button("Add");
-        addButton.setOnAction(event -> {
-            new Machine(uField_1.getText());
-        });
+
+
+
 
         // error label
-        Label errorLabel = new Label("Error: password is wrong");
+        Label errorLabel = new Label("Error: the machine is already exists");
+        errorLabel.setVisible(false);
         layout.getChildren().addAll(addButton, errorLabel);
         //#endregion ------------------------------------------------------
 
@@ -66,6 +67,17 @@ public class EditPage_Machine extends BorderPane {
         //#endregion -------------------------------------------------------
 
 
+        addButton.setOnAction(event -> {
+            String machineName = uField_1.getText();
+            Machine existingMachine = Machine.machineList.get(machineName);
+
+            if (existingMachine == null) {
+                Machine newMachine = new Machine(machineName);
+            } else {
+                errorLabel.setVisible(true);
+
+            }
+        });
 
         setCenter(splitPane);
     }
