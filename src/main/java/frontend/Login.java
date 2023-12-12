@@ -11,15 +11,10 @@ import javafx.scene.layout.*;
 import javafx.scene.paint.Color;
 import javafx.stage.Stage;
 
-public class Login extends Application {
+public class Login extends StackPane {
 
-    @Override
-    public void start(Stage primaryStage) {
-
-        primaryStage.setWidth(Constants.laptopWidth);
-        primaryStage.setHeight(Constants.laptopHeight);
-
-        primaryStage.setTitle("Sign In Form");
+//    @Override
+    public Login() {
 
         // title
         Label titleLabel = new Label("Login");
@@ -38,7 +33,6 @@ public class Login extends Application {
         // error label
         Label errorLabel = new Label("Error: password is wrong");
 
-
         // Styles ----------------- Do not touch -----------------
         titleLabel.getStyleClass().add("title");
         usernameField.getStyleClass().add("input__primary");
@@ -47,29 +41,14 @@ public class Login extends Application {
         errorLabel.getStyleClass().add("error-label");
         // ------------------------- Do not touch -----------------
 
-
         // Create layout
         VBox layout = new VBox(10);
         layout.getChildren().addAll(titleLabel, usernameField, passwordField, signInButton, errorLabel);
         layout.setPadding(new Insets(20));
         layout.getStyleClass().add("container");  // Style --- Do not touch
 
-
-        // Create a resizable StackPane
-        StackPane root = new StackPane();
-        root.getStyleClass().add("main-container"); // Style --- Do not touch
-        root.getChildren().add(layout);
-
-        // Create scene
-        Scene scene = new Scene(root, Constants.laptopWidth, Constants.laptopHeight);
-        scene.getStylesheets().add(getClass().getResource("styles.css").toExternalForm());
-
-        // Set up stage
-        primaryStage.setScene(scene);
-        primaryStage.show();
+        getStyleClass().add("main-container"); // Style --- Do not touch
+        getChildren().add(layout);
     }
 
-    public static void main(String[] args) {
-        launch(args);
-    }
 }
