@@ -1,7 +1,10 @@
 package Classes;
 
+import java.io.File;
+import java.io.FileNotFoundException;
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.Scanner;
 
 public class Project {
     public static HashMap<String, Project> projects = new HashMap<>();
@@ -10,8 +13,6 @@ public class Project {
     private Status status;
     private HashMap<Machine, ArrayList<Reservation>> machines;
     private Team team;
-
-
 
     public Project(String projectName){ // for creating project without team, delete it later
         this.projectName = projectName;
@@ -51,5 +52,19 @@ public class Project {
 
     public Team getTeam() {
         return team;
+    }
+
+    public int getMachineCount() {
+        int machineCount = 0;
+        for(ArrayList<Reservation> machine: machines.values())
+            machineCount += machine.size();
+        return machineCount;
+    }
+
+    public static void load() throws FileNotFoundException {
+        Scanner in = new Scanner(new File("data/projects.txt"));
+        while(in.hasNext())
+            new Project(in.nextLine(), Team.teamList.get(in.nextLine()));
+        Machine.load();
     }
 }

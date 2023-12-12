@@ -1,7 +1,10 @@
 package Classes;
 
+import java.io.File;
+import java.io.FileNotFoundException;
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.Scanner;
 
 public class Team {
     public static HashMap<String, Team> teamList = new HashMap<>();
@@ -12,6 +15,7 @@ public class Team {
 
     public Team(String teamName, Member leader){
         this.leader = leader;
+        leader.addLeader(this);
         this.teamName = teamName;
         teamList.put(teamName, this);
     }
@@ -66,5 +70,17 @@ public class Team {
 
     public void removeProject(Project p) {
         projects.remove(p);
+    }
+
+    public static void load() throws FileNotFoundException {
+        Scanner in = new Scanner(new File("data/teams.txt"));
+        while(in.hasNext()) {
+            String name = in.nextLine();
+            Scanner members = new Scanner(in.nextLine());
+            Team t = new Team(name, Member.memberList.get(members.next()));
+            while(members.hasNext())
+                t.addMember(Member.memberList.get(members.next()));
+        }
+        Project.load();
     }
 }

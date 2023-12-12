@@ -1,7 +1,5 @@
 package Classes;
 
-import java.util.Date;
-
 public class Reservation {
     private Date start, finish;
     private Project project;

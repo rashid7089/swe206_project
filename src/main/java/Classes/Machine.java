@@ -1,7 +1,9 @@
 package Classes;
 
-import java.sql.Date;
 import java.util.HashMap;
+import java.util.Scanner;
+import java.io.File;
+import java.io.FileNotFoundException;
 import java.util.ArrayList;
 
 public class Machine {
@@ -31,5 +33,16 @@ public class Machine {
 
     public String getMachineName() {
         return machineName;
+    }
+
+    public static void load() throws FileNotFoundException {
+        Scanner in = new Scanner(new File("data/machines.txt"));
+        while(in.hasNext()) {
+            Machine m = new Machine(in.nextLine());
+            int resCount = in.nextInt();
+            while(resCount-- > 0) {
+                m.reserve(Project.projects.get(in.nextLine()), new Date(in.nextInt(), in.nextInt(), in.nextInt(), in.nextInt()), new Date(in.nextInt(), in.nextInt(), in.nextInt(), in.nextInt()));
+            }
+        }
     }
 }
