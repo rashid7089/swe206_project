@@ -17,9 +17,24 @@ import java.util.ArrayList;
 public class Main extends Application {
 
 
-//    public void setPage(String page) {
-//        if
-//    }
+   public void setPage(String page) {
+       if(page.equals("Projects")){
+        primaryStage.setScene();
+
+       }       
+       else if (page.equals("Teams")){
+
+       }
+       else if (page.equals("Logout")){
+
+       }
+       else if (page.equals("Machines")) {
+        
+       }
+       else{
+
+       }
+   }
     @Override
     public void start(Stage primaryStage) throws IOException {
         primaryStage.setWidth(Constants.laptopWidth);
