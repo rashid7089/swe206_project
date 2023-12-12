@@ -22,10 +22,8 @@ public class Template extends Application {
         // Set an action when the button is clicked
         myButton.setOnAction(e -> {
             System.out.println("Button clicked!");
-            // Add your custom action here
         });
 
-        // Create a layout and add the button to it
         StackPane root = new StackPane();
         root.getChildren().add(myButton);
 

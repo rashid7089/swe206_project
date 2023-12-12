@@ -13,12 +13,10 @@ import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 
-public class Projects extends Application {
+public class Projects extends BorderPane {
 
-    @Override
-    public void start(Stage primaryStage) {
-        primaryStage.setWidth(Constants.laptopWidth);
-        primaryStage.setHeight(Constants.laptopHeight);
+
+    public Projects() {
 
         // ---------- Projects Left menu -----------------------------
         ListView<Project> projectListView = new ListView<>();
@@ -34,8 +32,6 @@ public class Projects extends Application {
         projectListView.setMinHeight(Constants.laptopHeight);
         // -----------------------------------------------------------
 
-
-
         // Sidebar ------- No need to modify anything here  -------------------------------
         VBox sub_sidebar = new VBox(projectListView);
         Sidebar sidebar = new Sidebar("Projects");
@@ -45,18 +41,7 @@ public class Projects extends Application {
         splitPane.setDividerPositions(0.7);
         // Sidebar ------- -  --- -------------------------------------------------------
 
-        BorderPane root = new BorderPane();
-        root.setCenter(splitPane);
-        Scene scene = new Scene(root, 400, 300);
-
-        // Styles ------- DON't TOUCH --------------------------
-        scene.getStylesheets().add(getClass().getResource("styles.css").toExternalForm());
-        scene.getStylesheets().add(getClass().getResource("sidebar.css").toExternalForm());
-        // Styles ------- DON't TOUCH --------------------------
-
-        primaryStage.setTitle("Project Menu List");
-        primaryStage.setScene(scene);
-        primaryStage.show();
+        setCenter(splitPane);
     }
 
     private static class ProjectListCell extends ListCell<Project> {
@@ -104,7 +89,4 @@ public class Projects extends Application {
         }
     }
 
-    public static void main(String[] args) {
-        launch(args);
-    }
 }

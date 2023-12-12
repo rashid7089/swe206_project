@@ -17,14 +17,17 @@ public class Main extends Application {
         // title of the window
         primaryStage.setTitle("JavaFX Button Template");
 
-        // Layouts
+        // pages
         Login loginPage = new Login();
+        Projects projectsPage = new Projects();
+
 
         // Create the scene
-        Scene scene = new Scene(loginPage, Constants.laptopWidth, Constants.laptopHeight);
+        Scene scene = new Scene(projectsPage, Constants.laptopWidth, Constants.laptopHeight);
 
         // load Styles Files
         scene.getStylesheets().add(getClass().getResource("styles.css").toExternalForm());
+        scene.getStylesheets().add(getClass().getResource("sidebar.css").toExternalForm());
 
         // Set up the stage
         primaryStage.setScene(scene);
