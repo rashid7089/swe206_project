@@ -1,5 +1,6 @@
 package Classes;
 
+import java.io.FileNotFoundException;
 import java.util.ArrayList;
 import java.util.HashMap;
 
@@ -28,18 +29,36 @@ public class Member extends User {
 
     public void addTeam(Team t) {
         myTeam.add(t);
+        if (User.loaded) {
+            try {
+                User.save();
+            } catch (FileNotFoundException ex) {
+            }
+        }
     }
 
     public void removeTeam(Team t) {
         myTeam.remove(t);
+        try {
+            User.save();
+        } catch (FileNotFoundException ex) {}
     }
 
     public void addLeader(Team t) {
         leaderIn.add(t);
+        if(User.loaded) {
+            try {
+                User.save();
+            } catch (FileNotFoundException ex) {
+            }
+        }
     }
 
     public void removeLeader(Team t) {
         leaderIn.remove(t);
+        try {
+            User.save();
+        } catch (FileNotFoundException ex) {}
     }
 
     public String getName() {

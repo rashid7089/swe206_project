@@ -46,16 +46,25 @@ public class Team {
             leader.removeLeader(this);
             leader = m;
             leader.addLeader(this);
+            try {
+                User.save();
+            } catch (FileNotFoundException ex) {}
             return true;
         }
         return false;
     }
 
     public boolean addMember(Member m) {
-        if(members.contains(m))
+        if (members.contains(m))
             return false;
         members.add(m);
         m.addTeam(this);
+        if (User.loaded) {
+            try {
+                User.save();
+            } catch (FileNotFoundException ex) {
+            }
+        }
         return true;
     }
 
@@ -66,15 +75,27 @@ public class Team {
             return false;
         members.remove(m);
         m.removeTeam(this);
+        try {
+            User.save();
+        } catch (FileNotFoundException ex) {}
         return true;
     }
 
     public void addProject(Project p) {
         projects.add(p);
+        if (User.loaded) {
+            try {
+                User.save();
+            } catch (FileNotFoundException ex) {
+            }
+        }
     }
 
     public void removeProject(Project p) {
         projects.remove(p);
+        try {
+            User.save();
+        } catch (FileNotFoundException ex) {}
     }
 
     public int getNumberOfProjects() {

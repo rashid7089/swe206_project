@@ -28,6 +28,11 @@ public class Project {
         if(!machines.containsKey(machine))
             machines.put(machine,new ArrayList<>());
         machines.get(machine).add(r);
+        if(User.loaded) {
+            try {
+                User.save();
+            } catch (FileNotFoundException ex) {}
+        }
     }
 
     public HashMap<Machine, ArrayList<Reservation>> getMachines() {
@@ -65,7 +70,7 @@ public class Project {
     }
 
     public static void save() throws FileNotFoundException {
-        PrintWriter pw = new PrintWriter(new File("data/projects.txt"));
+        PrintWriter pw = new PrintWriter(new File("data/projects_test.txt"));
         for(Project p: projects.values())
             pw.println(p);
         pw.close();

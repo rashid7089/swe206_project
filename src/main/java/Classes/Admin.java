@@ -1,5 +1,7 @@
 package Classes;
 
+import java.io.FileNotFoundException;
+
 public class Admin extends User {
     public static Admin admin;
     public Admin(String user_name, String password) {
@@ -18,6 +20,9 @@ public class Admin extends User {
         Team t = new Team(name, leader);
         leader.addTeam(t);
         leader.addLeader(t);
+        try {
+            User.save();
+        } catch (FileNotFoundException ex) {}
         return true;
     }
 
@@ -26,6 +31,9 @@ public class Admin extends User {
             return false;
         Project p = new Project(name, t);
         t.addProject(p);
+        try {
+            User.save();
+        } catch (FileNotFoundException ex) {}
         return true;
     }
 
@@ -34,6 +42,9 @@ public class Admin extends User {
             return false;
         p.getTeam().removeProject(p);
         Project.projects.remove(p.getName());
+        try {
+            User.save();
+        } catch (FileNotFoundException ex) {}
         return true;
     }
 
@@ -41,6 +52,9 @@ public class Admin extends User {
         if(Machine.machineList.containsKey(name))
             return false;
         new Machine(name);
+        try {
+            User.save();
+        } catch (FileNotFoundException ex) {}
         return true;
     }
 
@@ -52,6 +66,9 @@ public class Admin extends User {
                     if(p.getMachines().containsKey(m))
                         p.getMachines().remove(m);
             }
+            try {
+                User.save();
+            } catch (FileNotFoundException ex) {}
             return true;
         }
         return false;
@@ -62,6 +79,9 @@ public class Admin extends User {
             return false;
         oldTeam.removeProject(p);
         newTeam.addProject(p);
+        try {
+            User.save();
+        } catch (FileNotFoundException ex) {}
         return true;
     }
 }

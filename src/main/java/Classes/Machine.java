@@ -25,6 +25,11 @@ public class Machine {
 
         machineSchedule.add(r);
         p.reserve(this, r);
+        if(User.loaded) {
+            try {
+                User.save();
+            } catch (FileNotFoundException ex) {}
+        }
         return true;
     }
 
@@ -52,7 +57,7 @@ public class Machine {
     }
 
     public static void save() throws FileNotFoundException {
-        PrintWriter pw = new PrintWriter(new File("data/machines.txt"));
+        PrintWriter pw = new PrintWriter(new File("data/machines_test.txt"));
         for(Machine m:machineList.values())
             pw.println(m.toString());
         pw.close();

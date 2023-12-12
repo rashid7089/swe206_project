@@ -8,6 +8,7 @@ import java.util.Scanner;
 
 public class User {
     private String user_name, password;
+    public static boolean loaded = false;
     private static HashMap<String,String> userAuth = new HashMap<>(); //
     public static HashMap<String,User> userObjects = new HashMap<>(); //
 
@@ -47,6 +48,7 @@ public class User {
             new Member(in.next(), in.nextLine().trim(), in.nextLine());
         in.close();
         Team.load();
+        loaded = true;
     }
 
     public static void save() throws FileNotFoundException {
