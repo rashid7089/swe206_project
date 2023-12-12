@@ -43,16 +43,24 @@ public class Main extends Application {
             primaryStage.setScene(ourmachinesPage_scene);
 
         }
-        else if(page.equals("Edit page")){
-            primaryStage.setScene(editpage_scene);
-
-        }
         else if (page.equals("Machines")) {
             primaryStage.setScene(machinesPage_scene);
 
         }
+        else if(page.equals("Edit page")){
+            primaryStage.setScene(editpage_scene);
+
+        }
         else if(page.equals("Edit page machines")){
             primaryStage.setScene(editpage_machine_scene);
+
+        }
+        else if(page.equals("Edit page team")){
+            primaryStage.setScene(editpage_team_scene);
+
+        }
+        else if(page.equals("Edit page project")){
+            primaryStage.setScene(editpage_project_scene);
 
         }
 
