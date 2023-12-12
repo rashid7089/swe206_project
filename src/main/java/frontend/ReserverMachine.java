@@ -49,12 +49,16 @@ public class ReserverMachine extends BorderPane {
         Day.getStyleClass().addAll("input__primary", "input__primary--mxWidth");
 
 
+        ArrayList<String> teamsNames = new ArrayList<>();
 
-//        ArrayList<Team> teams;
-//        Member loged_user = (Member) Main.loged_user;
+        if (Main.loged_user instanceof Member) {
+            Member loged_user = (Member) Main.loged_user;
+            ArrayList<Team> teamsObjects = loged_user.getTeams();
+            for(Team t: teamsObjects) teamsNames.add(t.getName());
+        }
 
         // Create a list members names
-        ObservableList<String> teams_options = FXCollections.observableArrayList(Team.teamList.keySet());
+        ObservableList<String> teams_options = FXCollections.observableArrayList(teamsNames);
         ObservableList<String> machines_options = FXCollections.observableArrayList(Machine.machineList.keySet());
 
         int currentYear = LocalDate.now().getYear();
@@ -74,8 +78,8 @@ public class ReserverMachine extends BorderPane {
         ObservableList<Integer> days_options = FXCollections.observableArrayList(possibleDays);
 
 
-        team.setItems(machines_options);
-        team.setValue("select the machine");
+        machine.setItems(machines_options);
+        machine.setValue("select the machine");
         layout.getChildren().add(machine);
 
         team.setItems(teams_options);
