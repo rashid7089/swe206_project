@@ -3,10 +3,13 @@ package Classes;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.PrintWriter;
+import java.util.HashMap;
 import java.util.Scanner;
 
 public class User {
     private String user_name, password;
+    private static HashMap<String,String> userAuth = new HashMap<>(); //
+    public static HashMap<String,User> userObjects = new HashMap<>(); //
 
     public User(String user_name, String password){
         this.user_name = user_name;
@@ -32,7 +35,6 @@ public class User {
         }
         return null;
     }
-
     @Override
     public String toString() {
         return user_name + " " + password;

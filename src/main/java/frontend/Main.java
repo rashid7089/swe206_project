@@ -26,6 +26,7 @@ public class Main extends Application {
     private static Scene editpage_machine_scene;
     private static Scene editpage_team_scene;
     private static Scene editpage_project_scene;
+    private static Scene reserveMachine_scene;
 
     private static Stage primaryStage;
 
@@ -110,6 +111,7 @@ public class Main extends Application {
         EditPage_Machine editpage_machine = new EditPage_Machine();
         EditPage_Team editpage_team = new EditPage_Team();
         EditPage_Project editpage_project = new EditPage_Project();
+        ReserverMachine reserverMachine = new ReserverMachine();
 
         //#endregion
 
@@ -123,7 +125,7 @@ public class Main extends Application {
         editpage_machine_scene = new Scene(editpage_machine, Constants.laptopWidth, Constants.laptopHeight);
         editpage_team_scene = new Scene(editpage_team, Constants.laptopWidth, Constants.laptopHeight);
         editpage_project_scene = new Scene(editpage_project, Constants.laptopWidth, Constants.laptopHeight);
-
+        reserveMachine_scene = new Scene(reserverMachine, Constants.laptopWidth, Constants.laptopHeight);
         String[] cssClasses = {getClass().getResource("styles.css").toExternalForm(), getClass().getResource("sidebar.css").toExternalForm()};
 
         // load Styles Files
@@ -136,6 +138,7 @@ public class Main extends Application {
         editpage_machine_scene.getStylesheets().addAll(cssClasses);
         editpage_team_scene.getStylesheets().addAll(cssClasses);
         editpage_project_scene.getStylesheets().addAll(cssClasses);
+        reserveMachine_scene.getStylesheets().addAll(cssClasses);
 
         // Set up the stage
         // TODO: make the scene page dynamic (changeable)

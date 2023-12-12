@@ -5,6 +5,11 @@ public class Admin extends User {
     public Admin(String user_name, String password) {
         super(user_name, password);
         admin = this;
+        userObjects.put(user_name, this);
+    }
+
+    public boolean isAdmin() {
+        return true;
     }
 
     public boolean createTeam(String name, Member leader) {
