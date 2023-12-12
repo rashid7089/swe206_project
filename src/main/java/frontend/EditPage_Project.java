@@ -86,6 +86,7 @@ public class EditPage_Project extends BorderPane {
                 Project existingProject = Project.projects.get(projecttName);
 
                 if (existingProject == null) {
+                    errorLabel.setVisible(false);
                     Project newProject = new Project(projecttName,team);
                 } else {
                     errorLabel.setVisible(true);
