@@ -53,15 +53,15 @@ public class Main extends Application {
             primaryStage.setScene(editpage_scene);
 
         }
-        else if(page.equals("Edit page machines")){
+        else if(page.equals("Add a machine")){
             primaryStage.setScene(editpage_machine_scene);
 
         }
-        else if(page.equals("Edit page team")){
+        else if(page.equals("Add a team")){
             primaryStage.setScene(editpage_team_scene);
 
         }
-        else if(page.equals("Edit page project")){
+        else if(page.equals("Add a project")){
             primaryStage.setScene(editpage_project_scene);
 
         }
