@@ -1,9 +1,6 @@
 package frontend;
 
-import Classes.Machine;
-import Classes.Member;
-import Classes.Project;
-import Classes.Team;
+import Classes.*;
 import javafx.application.Application;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
@@ -16,6 +13,7 @@ import java.util.ArrayList;
 
 public class Main extends Application {
 
+    public static User loged_user;
 
     // Create the scene
     private static Scene login_scene;
@@ -125,7 +123,6 @@ public class Main extends Application {
         editpage_team_scene = new Scene(editpage_team, Constants.laptopWidth, Constants.laptopHeight);
         editpage_project_scene = new Scene(editpage_project, Constants.laptopWidth, Constants.laptopHeight);
 
-        System.out.println(projectPage_scene);
         String[] cssClasses = {getClass().getResource("styles.css").toExternalForm(), getClass().getResource("sidebar.css").toExternalForm()};
 
         // load Styles Files
@@ -141,7 +138,7 @@ public class Main extends Application {
 
         // Set up the stage
         // TODO: make the scene page dynamic (changeable)
-        primaryStage.setScene(projectPage_scene);
+        primaryStage.setScene(login_scene);
         primaryStage.show();
     }
 

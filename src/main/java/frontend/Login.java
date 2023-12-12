@@ -1,5 +1,6 @@
 package frontend;
 
+import Classes.User;
 import javafx.application.Application;
 import javafx.geometry.Insets;
 import javafx.scene.Scene;
@@ -34,8 +35,23 @@ public class Login extends StackPane {
         // sign in button
         Button signInButton = new Button("Sign In"); // call Auth
 
+
         // error label
-        Label errorLabel = new Label("Error: password is wrong");
+        Label errorLabel = new Label("Error: username or password is wrong");
+        errorLabel.setVisible(false);
+
+
+        signInButton.setOnAction(event -> {
+            User result = User.login(usernameField.getText(), passwordField.getText());
+            if (result != null) {
+                usernameField.setText("");
+                passwordField.setText("");
+                Main.loged_user = result;
+                Main.setPage("Projects");
+            }
+            passwordField.setText("");
+            errorLabel.setVisible(true);
+        });
 
         // Styles ----------------- Do not touch -----------------
         titleLabel.getStyleClass().add("title");
@@ -54,5 +70,7 @@ public class Login extends StackPane {
         getStyleClass().add("main-container"); // Style --- Do not touch
         getChildren().add(layout);
     }
+
+
 
 }

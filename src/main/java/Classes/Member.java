@@ -16,6 +16,7 @@ public class Member extends User {
 
         this.name = name;
         memberList.put(user_name, this);
+        userObjects.put(user_name, this);
     }
 
     public ArrayList<Team> getTeams() {
