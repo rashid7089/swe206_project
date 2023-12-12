@@ -7,6 +7,7 @@ import javafx.scene.layout.VBox;
 
 import java.util.ArrayList;
 
+
 public class Sidebar extends VBox {
 
     public Sidebar(String currentPage) {
@@ -30,7 +31,7 @@ public class Sidebar extends VBox {
 
             getChildren().add(sidebarButton);
 
-            sidebarButton.setOnAction(e-> setScence(a)); //call setScence function based on the buttios pressed 
+            sidebarButton.setOnAction(e-> Main.setPage(a)); //call setScence function based on the buttios pressed
         }
         setAlignment(Pos.TOP_CENTER);
         setSpacing(10);

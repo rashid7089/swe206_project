@@ -17,9 +17,35 @@ import java.util.ArrayList;
 public class Main extends Application {
 
 
-   public static void setPage(Stage primaryStage, String page) {
+    //#region pages --------------------------------------------------------
+    private static Login loginPage;
+    private static Projects projectsPage;
+    private static Teams teamsPage;
+    private static Machines ourmachinesPage;
+    private static Machines machinesPage;
+
+
+    // edit pages
+    private static EditPage editpage ;
+    private static EditPage_Machine editpage_machine ;
+
+
+    //#endregion
+
+
+    // Create the scene
+    private static Scene login_scene;
+    private static Scene projectPage_scene;
+    private static Scene teamsPage_scene;
+    private static Scene ourmachinesPage_scene ;
+    private static Scene machinesPage_scene ;
+    private static Scene editpage_scene;
+    private static Scene editpage_machine_scene;
+    private static Stage primaryStage;
+
+    public static void setPage(String page) {
        if(page.equals("Projects")){
-//            primaryStage.setScene();
+            primaryStage.setScene(projectPage_scene);
 
        }       
        else if (page.equals("Teams")){
@@ -37,6 +63,8 @@ public class Main extends Application {
    }
     @Override
     public void start(Stage primaryStage) throws IOException {
+        this.primaryStage = primaryStage;
+
         primaryStage.setWidth(Constants.laptopWidth);
         primaryStage.setHeight(Constants.laptopHeight);
 
@@ -67,30 +95,27 @@ public class Main extends Application {
 
 
         //#region pages --------------------------------------------------------
-        Login loginPage = new Login();
-        Projects projectsPage = new Projects(projects_data);
-        Teams teamsPage = new Teams(teams_data);
-        Machines ourmachinesPage = new Machines(machineArrayList, "Our Reserved Machines");
-        Machines machinesPage = new Machines(machineArrayList, "Machines");
-
+         loginPage = new Login();
+         projectsPage = new Projects(projects_data);
+         teamsPage = new Teams(teams_data);
+         ourmachinesPage = new Machines(machineArrayList, "Our Reserved Machines");
+         machinesPage = new Machines(machineArrayList, "Machines");
 
         // edit pages
-        EditPage editpage = new EditPage();
-        EditPage_Machine editpage_machine = new EditPage_Machine();
+         editpage = new EditPage();
+         editpage_machine = new EditPage_Machine();
 
 
         //#endregion
 
-
         // Create the scene
-        Scene login_scene = new Scene(loginPage, Constants.laptopWidth, Constants.laptopHeight);
-        Scene projectPage_scene = new Scene(projectsPage, Constants.laptopWidth, Constants.laptopHeight);
-        Scene teamsPage_scene = new Scene(teamsPage, Constants.laptopWidth, Constants.laptopHeight);
-        Scene ourmachinesPage_scene = new Scene(ourmachinesPage, Constants.laptopWidth, Constants.laptopHeight);
-        Scene machinesPage_scene = new Scene(machinesPage, Constants.laptopWidth, Constants.laptopHeight);
-        Scene editpage_scene = new Scene(editpage, Constants.laptopWidth, Constants.laptopHeight);
-        Scene editpage_machine_scene = new Scene(editpage_machine, Constants.laptopWidth, Constants.laptopHeight);
-
+        login_scene = new Scene(loginPage, Constants.laptopWidth, Constants.laptopHeight);
+        projectPage_scene = new Scene(projectsPage, Constants.laptopWidth, Constants.laptopHeight);
+        teamsPage_scene = new Scene(teamsPage, Constants.laptopWidth, Constants.laptopHeight);
+        ourmachinesPage_scene = new Scene(ourmachinesPage, Constants.laptopWidth, Constants.laptopHeight);
+        machinesPage_scene = new Scene(machinesPage, Constants.laptopWidth, Constants.laptopHeight);
+        editpage_scene = new Scene(editpage, Constants.laptopWidth, Constants.laptopHeight);
+        editpage_machine_scene = new Scene(editpage_machine, Constants.laptopWidth, Constants.laptopHeight);
 
 
         String[] cssClasses = {getClass().getResource("styles.css").toExternalForm(), getClass().getResource("sidebar.css").toExternalForm()};
@@ -105,7 +130,7 @@ public class Main extends Application {
 
         // Set up the stage
         // TODO: make the scene page dynamic (changeable)
-        primaryStage.setScene(editpage_machine_scene);
+        primaryStage.setScene(login_scene);
         primaryStage.show();
     }
 
