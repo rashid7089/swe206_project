@@ -1,5 +1,6 @@
 package frontend;
 
+import Classes.Admin;
 import Classes.Member;
 import Classes.Project;
 import Classes.Team;
@@ -121,7 +122,9 @@ public class EditPage_Team extends BorderPane {
 
                 if (existingTeam == null) {
                     errorLabel.setVisible(false);
-                    Team newTeam = new Team(team, mLeader);
+                    ((Admin) Main.loged_user).createTeam(team, mLeader);
+                    Team newTeam = Team.teamList.get(team);
+                    
                     if (!member_1.equals("add a Member")) {
                         newTeam.addMember(member1);
                     }
