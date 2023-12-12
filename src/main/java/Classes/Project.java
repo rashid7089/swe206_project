@@ -2,6 +2,7 @@ package Classes;
 
 import java.io.File;
 import java.io.FileNotFoundException;
+import java.io.PrintWriter;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Scanner;
@@ -62,8 +63,17 @@ public class Project {
             new Project(in.nextLine(), Team.teamList.get(in.nextLine()));
         Machine.load();
     }
+
+    public static void save() throws FileNotFoundException {
+        PrintWriter pw = new PrintWriter(new File("data/projects.txt"));
+        for(Project p: projects.values())
+            pw.println(p);
+        pw.close();
+        Machine.save();
+    }
+
     @Override
     public String toString(){
-        return projectName;
+        return projectName + '\n' + team.getName();
     }
 }

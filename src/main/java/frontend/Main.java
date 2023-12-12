@@ -7,6 +7,7 @@ import javafx.scene.control.Button;
 import javafx.scene.layout.StackPane;
 import javafx.stage.Stage;
 
+import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.lang.reflect.Array;
 import java.util.ArrayList;
@@ -156,6 +157,12 @@ public class Main extends Application {
     }
 
     public static void main(String[] args) {
-        launch();
+        try {
+            User.load();
+            launch();
+        }
+        catch (FileNotFoundException ex) {
+            System.out.println("unexpected error happened");
+        }
     }
 }

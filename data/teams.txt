@@ -1,6 +1,6 @@
+team3
+member1 member2
 team1
 member2 member1 member3
 team2
 member3 member1
-team3
-member1 member2

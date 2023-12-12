@@ -15,4 +15,9 @@ public class Reservation {
     public Project getProject() {
         return project;
     }
+
+    @Override
+    public String toString() {
+        return start.toString() + ' ' + finish.toString();
+    }
 }

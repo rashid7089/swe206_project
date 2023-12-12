@@ -1,5 +1,6 @@
 package Classes;
 
+import java.io.PrintWriter;
 import java.util.HashMap;
 import java.util.Scanner;
 import java.io.File;
@@ -50,12 +51,23 @@ public class Machine {
         }
     }
 
+    public static void save() throws FileNotFoundException {
+        PrintWriter pw = new PrintWriter(new File("data/machines_test.txt"));
+        for(Machine m:machineList.values())
+            pw.println(m.toString());
+        pw.close();
+    }
+
     public String getName() {
         return machineName;
     }
 
     @Override
     public String toString(){
-        return machineName;
+        String s = machineName + '\n';
+        s +=  machineSchedule.size();
+        for(int i = 0; i < machineSchedule.size(); i++)
+            s += '\n' + machineSchedule.get(i).toString();
+        return s;
     }
 }
