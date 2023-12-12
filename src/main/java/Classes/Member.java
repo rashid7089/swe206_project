@@ -17,7 +17,7 @@ public class Member extends User {
         this.name = name;
         memberList.put(user_name, this);
     }
-    
+
     public ArrayList<Team> getTeams() {
         return myTeam;
     }
@@ -51,5 +51,9 @@ public class Member extends User {
         for(Team t: myTeam)
             projects.addAll(t.getProjects());
         return projects;
+    }
+    @Override
+    public String toString(){
+        return name;
     }
 }

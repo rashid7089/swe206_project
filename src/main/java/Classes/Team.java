@@ -92,4 +92,8 @@ public class Team {
         }
         Project.load();
     }
+    @Override
+    public String toString(){
+        return teamName;
+    }
 }

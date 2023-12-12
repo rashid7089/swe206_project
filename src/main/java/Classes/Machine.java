@@ -49,4 +49,8 @@ public class Machine {
             }
         }
     }
+    @Override
+    public String toString(){
+        return machineName;
+    }
 }

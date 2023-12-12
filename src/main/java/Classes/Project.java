@@ -62,4 +62,8 @@ public class Project {
             new Project(in.nextLine(), Team.teamList.get(in.nextLine()));
         Machine.load();
     }
+    @Override
+    public String toString(){
+        return projectName;
+    }
 }
