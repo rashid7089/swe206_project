@@ -10,7 +10,6 @@ import javafx.scene.layout.VBox;
 import java.time.*;
 import java.time.LocalDate;
 import java.util.ArrayList;
-import java.util.Date;
 
 public class ReserverMachine extends BorderPane {
 
@@ -123,6 +122,18 @@ public class ReserverMachine extends BorderPane {
         splitPane.setDividerPositions(0.7);
         //#endregion -------------------------------------------------------
 
+        Machine m = Machine.machineList.get(machine.getValue());
+        Date date = new Date(Year.getValue(),Month.getValue(),Day.getValue());
+        Project p = Project.projects.get(project.getValue());
+
+        addButton.setOnAction(event -> {
+            if (m.reserve(p,date)) {
+                errorLabel.setVisible(false);
+
+            } else {
+                errorLabel.setVisible(true);
+            }
+        });
 
         setCenter(splitPane);
     }
