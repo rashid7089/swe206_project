@@ -1,9 +1,10 @@
 package Classes;
 
 public class Admin extends User {
-
-    public Admin(String user_name, String password, int id) {
+    public static Admin admin;
+    public Admin(String user_name, String password, String id) {
         super(user_name, password, id);
+        admin = this;
     }
 
     public boolean createTeam(String name, Member leader) {

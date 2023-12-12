@@ -1,24 +1,18 @@
 package Classes;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 
 public class Member extends User {
-
     private ArrayList<Team> myTeam;
     private ArrayList<Team> leaderIn;
+    private String name;
+    public static HashMap<String, Member> memberList = new HashMap<>();
 
-    public Member(String user_name, String password, int id) {
+    public Member(String user_name, String password, String id, String name) {
         super(user_name, password, id);
-        
-    }
-        public Member(String user_name, String password, int id, ArrayList<Team> myTeam) {
-        super(user_name, password, id);
-        this.myTeam = myTeam;
-    }
-        public Member(String user_name, String password, int id, ArrayList<Team> myTeam, ArrayList<Team> leaderIn) {
-        super(user_name, password, id);
-        this.myTeam = myTeam;
-        this.leaderIn = leaderIn;
+        this.name = name;
+        memberList.put(id, this);
     }
     
     public ArrayList<Team> getTeams() {
@@ -43,5 +37,9 @@ public class Member extends User {
 
     public void removeLeader(Team t) {
         leaderIn.remove(t);
+    }
+
+    public String getName() {
+        return name;
     }
 }

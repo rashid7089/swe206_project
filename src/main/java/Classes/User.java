@@ -1,10 +1,13 @@
 package Classes;
 
-public class User {
-    private String user_name, password;
-    private int id;
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.util.Scanner;
 
-    public User(String user_name, String password, int id){
+public class User {
+    private String user_name, password, id;
+
+    public User(String user_name, String password, String id){
         this.user_name = user_name;
         this.password = password;
         this.id = id;
@@ -14,7 +17,16 @@ public class User {
         return user.equals(user_name) & pass.equals(password);
     }
 
-    public int getId() {
+    public String getId() {
         return id;
+    }
+
+    public static void load() throws FileNotFoundException {
+        Scanner in = new Scanner(new File("data/users.txt"));
+        new Admin(in.next(), in.next(), in.next());
+        while(in.hasNext())
+            new Member(in.next(), in.next(), in.next(), in.nextLine());
+        in.close();
+        Team.load();
     }
 }

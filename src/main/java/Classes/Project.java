@@ -1,7 +1,10 @@
 package Classes;
 
+import java.io.File;
+import java.io.FileNotFoundException;
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.Scanner;
 
 public class Project {
     public static HashMap<String, Project> projects = new HashMap<>();
@@ -51,5 +54,12 @@ public class Project {
 
     public Team getTeam() {
         return team;
+    }
+
+    public static void load() throws FileNotFoundException {
+        Scanner in = new Scanner(new File("data/projects.txt"));
+        while(in.hasNext())
+            new Project(in.nextLine(), Team.teamList.get(in.nextLine()));
+        Machine.load();
     }
 }
