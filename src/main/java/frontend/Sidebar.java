@@ -21,6 +21,7 @@ public class Sidebar extends VBox {
         getChildren().add(titleLabel);
         for(String a : Titles) {
             Button sidebarButton = new Button(a); // TODO: change page to choosed a
+            
             sidebarButton.getStyleClass().add("sidebar__button");
             sidebarButton.getStyleClass().add("btn");
             if (a == currentPage) {
@@ -28,6 +29,8 @@ public class Sidebar extends VBox {
             }
 
             getChildren().add(sidebarButton);
+
+            sidebarButton.setOnAction(e-> setScence(a)); //call setScence function based on the buttios pressed 
         }
         setAlignment(Pos.TOP_CENTER);
         setSpacing(10);
