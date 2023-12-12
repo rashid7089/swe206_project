@@ -32,13 +32,13 @@ public class EditPage_Machine extends BorderPane {
         inputFields.add("machineName");
 
 
-        //#region fields generator ------------------ no need to change anything here ---------
+        //#region fields generator ------------------ ---------
         int counter = 1;
         HBox currentBox = new HBox(2);
         currentBox.setSpacing(20);
 
         for(String field: inputFields) {
-            TextField uField = new TextField();
+            TextField uField = new TextField(); /// field
             uField.setPromptText(field);
             uField.getStyleClass().add("input__primary");
             uField.getStyleClass().add("input__primary--mxWidth");
@@ -51,6 +51,8 @@ public class EditPage_Machine extends BorderPane {
             }
             counter++;
         }
+        layout.getChildren().add(currentBox);
+
         // update button
         Button updateButton = new Button("Update");
 
