@@ -84,8 +84,8 @@ public class Main extends Application {
 
     public ArrayList<Team> generateDumyTeamList() {
         // Dummy data
-        Member member1 = new Member("user1", "password1", "1", "John Doe");
-        Member member2 = new Member("user2", "password2", "2", "Jane Doe");
+        Member member1 = new Member("user1", "password1",  "John Doe");
+        Member member2 = new Member("user2", "password2",  "Jane Doe");
 
         Team team1 = new Team("Team1", member1);
         team1.addMember(member2);

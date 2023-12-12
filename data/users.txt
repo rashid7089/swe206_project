@@ -1,7 +1,7 @@
 Admin 0000 0
-member1 a 1
+member1 a
 Ahmad Abdullah
-member2 b 2
+member2 b
 Ali Redwan
-member3 c 3
+member3 c
 Malik Alqahtani

@@ -9,13 +9,13 @@ public class Member extends User {
     private String name;
     public static HashMap<String, Member> memberList = new HashMap<>();
 
-    public Member(String user_name, String password, String id, String name) {
-        super(user_name, password, id);
+    public Member(String user_name, String password, String name) {
+        super(user_name, password);
         myTeam = new ArrayList<>();
         leaderIn = new ArrayList<>();
 
         this.name = name;
-        memberList.put(id, this);
+        memberList.put(user_name, this);
     }
     
     public ArrayList<Team> getTeams() {
