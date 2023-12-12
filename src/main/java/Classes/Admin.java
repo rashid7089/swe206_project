@@ -17,7 +17,7 @@ public class Admin extends User {
     }
 
     public ArrayList<String> allowedPages() {
-        return new ArrayList<>(List.of("Projects", "Teams", "Machines","Edit page","Edit page machines","Edit page project","Edit page team"));
+        return new ArrayList<>(List.of("Projects", "Teams", "Machines","Edit page machines","Edit page project","Edit page team"));
     }
 
     public boolean createTeam(String name, Member leader) {

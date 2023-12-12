@@ -74,14 +74,14 @@ public class User {
     }
 
     public ArrayList<Team> getTeams() {
-        return (ArrayList<Team>) Team.teamList.values();
+        return new ArrayList<>(Team.teamList.values());
     }
 
     public ArrayList<Project> getProjects() {
-        return (ArrayList<Project>) Project.projects.values();
+        return new ArrayList<>(Project.projects.values());
     }
 
     public ArrayList<Machine> getMachines() {
-        return (ArrayList<Machine>) Machine.machineList.values();
+        return new ArrayList<>(Machine.machineList.values());
     }
 }

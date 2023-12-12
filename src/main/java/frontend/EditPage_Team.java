@@ -110,10 +110,10 @@ public class EditPage_Team extends BorderPane {
                 errorLabel.setVisible(true);
             }
         else {
-            Member mLeader = Member.memberList.get(leader);
-            Member member1 = Member.memberList.get(member_1);
-            Member member2 = Member.memberList.get(member_2);
-            Member member3 = Member.memberList.get(member_3);
+            Member mLeader = Member.memberList.get(leader.getValue());
+            Member member1 = Member.memberList.get(member_1.getValue());
+            Member member2 = Member.memberList.get(member_2.getValue());
+            Member member3 = Member.memberList.get(member_3.getValue());
 
             addButton.setOnAction(e -> {
                 String team = uField_1.getText();
@@ -122,8 +122,12 @@ public class EditPage_Team extends BorderPane {
                 if (existingTeam == null) {
                     errorLabel.setVisible(false);
                     Team newTeam = new Team(team, mLeader);
-                    newTeam.addMember(member1);
-                    newTeam.addMember(member2);
+                    if (!member_1.equals("add a Member")) {
+                        newTeam.addMember(member1);
+                    }
+                    if (!member_2.equals("add a second Member")) {
+                        newTeam.addMember(member2);
+                    }
                     if (!member_3.equals("add a third Member")) {
                         newTeam.addMember(member3);
                     }

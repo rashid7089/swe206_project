@@ -76,13 +76,9 @@ public class Main extends Application {
 
     public static void LoadPages() { // needed so pages can load after loged user initalized
 
-        ArrayList<Team> teams_data = generateDumyTeamList();
-        ArrayList<Project> projects_data = new ArrayList<>();
-
-        ArrayList<Machine> machineArrayList = new ArrayList<>();
-        machineArrayList.add(new Machine("Machine1"));
-        machineArrayList.add(new Machine("Machine2"));
-        machineArrayList.add(new Machine("Machine3"));
+        ArrayList<Team> teams_data = loged_user.getTeams();
+        ArrayList<Project> projects_data = loged_user.getProjects();
+        ArrayList<Machine> machineArrayList = loged_user.getMachines();
 
         Projects projectsPage = new Projects(projects_data);
         Teams teamsPage = new Teams(teams_data);

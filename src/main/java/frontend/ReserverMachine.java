@@ -1,9 +1,6 @@
 package frontend;
 
-import Classes.Admin;
-import Classes.Machine;
-import Classes.Member;
-import Classes.Team;
+import Classes.*;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.geometry.Insets;
@@ -34,7 +31,7 @@ public class ReserverMachine extends BorderPane {
 
         // Create a select boxs to select members
         ComboBox<String> machine = new ComboBox<>();
-        ComboBox<String> team = new ComboBox<>();
+        ComboBox<String> project = new ComboBox<>();
         ComboBox<Integer> Year = new ComboBox<>();
         ComboBox<Integer> Month = new ComboBox<>();
         ComboBox<Integer> Day = new ComboBox<>();
@@ -43,18 +40,22 @@ public class ReserverMachine extends BorderPane {
 
         // styles Don't touch
         machine.getStyleClass().addAll("input__primary", "input__primary--mxWidth");
-        team.getStyleClass().addAll("input__primary", "input__primary--mxWidth");
+        project.getStyleClass().addAll("input__primary", "input__primary--mxWidth");
         Year.getStyleClass().addAll("input__primary", "input__primary--mxWidth");
         Month.getStyleClass().addAll("input__primary", "input__primary--mxWidth");
         Day.getStyleClass().addAll("input__primary", "input__primary--mxWidth");
 
 
+        ArrayList<String> projectsNames = new ArrayList<>();
 
-//        ArrayList<Team> teams;
-//        Member loged_user = (Member) Main.loged_user;
+        if (Main.loged_user instanceof Member) {
+            Member loged_user = (Member) Main.loged_user;
+            ArrayList<Project> projectsObjects = loged_user.getProjects();
+            for(Project t: projectsObjects) projectsNames.add(t.getName());
+        }
 
         // Create a list members names
-        ObservableList<String> teams_options = FXCollections.observableArrayList(Team.teamList.keySet());
+        ObservableList<String> projects_options = FXCollections.observableArrayList(projectsNames);
         ObservableList<String> machines_options = FXCollections.observableArrayList(Machine.machineList.keySet());
 
         int currentYear = LocalDate.now().getYear();
@@ -74,13 +75,13 @@ public class ReserverMachine extends BorderPane {
         ObservableList<Integer> days_options = FXCollections.observableArrayList(possibleDays);
 
 
-        team.setItems(machines_options);
-        team.setValue("select the machine");
+        machine.setItems(machines_options);
+        machine.setValue("select the machine");
         layout.getChildren().add(machine);
 
-        team.setItems(teams_options);
-        team.setValue("select the team");
-        layout.getChildren().add(team);
+        project.setItems(projects_options);
+        project.setValue("select the project");
+        layout.getChildren().add(project);
 
         Year.setItems(years_options);
         Year.setValue(currentYear);
