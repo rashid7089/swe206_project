@@ -13,8 +13,24 @@ public class User {
         this.password = password;
     }
 
-    public boolean login(String user, String pass) {
-        return user.equals(user_name) & pass.equals(password);
+    public String getUser_name() {
+        return user_name;
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public static User login(String user, String pass) {
+        if(user.equals(Admin.admin.getUser_name())) {
+            if (pass.equals(Admin.admin.getPassword()))
+                return Admin.admin;
+        }
+        if(Member.memberList.containsKey(user)) {
+            if(Member.memberList.get(user).getPassword().equals(pass))
+                return Member.memberList.get(user);
+        }
+        return null;
     }
 
     @Override
