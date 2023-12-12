@@ -1,6 +1,7 @@
 package frontend;
 
 import Classes.Member;
+import Classes.Project;
 import Classes.Team;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -53,16 +54,16 @@ public class EditPage_Project extends BorderPane {
         //#endregion
 
         // update button
-        Button updateButton = new Button("Create New");
+        Button addButton = new Button("Create New");
 
         // error label
         Label errorLabel = new Label("Error: password is wrong");
-        layout.getChildren().addAll(updateButton, errorLabel);
+        layout.getChildren().addAll(addButton, errorLabel);
         //#endregion ------------------------------------------------------
 
         //#region Styles ----------------- Do not touch -----------------
         titleLabel.getStyleClass().add("title__primary");
-        updateButton.getStyleClass().add("button__primary");
+        addButton.getStyleClass().add("button__primary");
         errorLabel.getStyleClass().add("error-label");
         subtitleLabel.getStyleClass().add("sub-title__primary");
         //#endregion ------------------------- Do not touch -----------------
@@ -76,6 +77,11 @@ public class EditPage_Project extends BorderPane {
         splitPane.getItems().addAll(sidebar, layout);
         splitPane.setDividerPositions(0.7);
         //#endregion -------------------------------------------------------
+
+        if (!team_box.equals("add a Team")){
+            Team team = Team.teamList.get(team_box);
+            addButton.setOnAction(event -> new Project(uField_1.getText(),team));
+        }
 
         setCenter(splitPane);
     }
