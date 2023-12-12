@@ -1,6 +1,7 @@
 package frontend;
 
 import Classes.Member;
+import Classes.Team;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.geometry.Insets;
@@ -72,16 +73,17 @@ public class EditPage_Team extends BorderPane {
         //#endregion
 
         // update button
-        Button updateButton = new Button("Update");
+        Button addButton = new Button("Add");
 
         // error label
         Label errorLabel = new Label("Error: password is wrong");
-        layout.getChildren().addAll(updateButton, errorLabel);
+        errorLabel.setVisible(false);
+        layout.getChildren().addAll(addButton, errorLabel);
         //#endregion ------------------------------------------------------
 
         //#region Styles ----------------- Do not touch -----------------
         titleLabel.getStyleClass().add("title__primary");
-        updateButton.getStyleClass().add("button__primary");
+        addButton.getStyleClass().add("button__primary");
         errorLabel.getStyleClass().add("error-label");
         subtitleLabel.getStyleClass().add("sub-title__primary");
         //#endregion ------------------------- Do not touch -----------------
@@ -95,6 +97,40 @@ public class EditPage_Team extends BorderPane {
         splitPane.getItems().addAll(sidebar, layout);
         splitPane.setDividerPositions(0.7);
         //#endregion -------------------------------------------------------
+
+        if (leader.equals(member_1) || leader.equals(member_2) || leader.equals(member_3)){
+            errorLabel.setVisible(true);}
+        else if (member_1.equals(member_2) || member_1.equals(member_3)){
+                errorLabel.setVisible(true);
+            }
+        else if (member_2.equals(member_3)){
+                errorLabel.setVisible(true);
+            }
+        else{
+            Member mLeader = Member.memberList.get(leader);
+            Member member1 = Member.memberList.get(member_1);
+            Member member2 = Member.memberList.get(member_2);
+
+            if (!member_3.equals("add a third Member")) {
+                    Member member3 = Member.memberList.get(member_3);
+                addButton.setOnAction(e -> {
+                    Team team = new Team(uField_1.getText(), mLeader);
+                    team.addMember(member1);
+                    team.addMember(member2);
+                    team.addMember(member3);
+                });
+
+                }
+            else {
+
+                addButton.setOnAction(e -> {
+                    Team team = new Team(uField_1.getText(), mLeader);
+                    team.addMember(member1);
+                    team.addMember(member2);
+                });
+            }
+            }
+
 
         setCenter(splitPane);
     }

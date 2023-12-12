@@ -1,5 +1,6 @@
 package frontend;
 
+import Classes.Machine;
 import javafx.geometry.Insets;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
@@ -36,17 +37,20 @@ public class EditPage_Machine extends BorderPane {
         layout.getChildren().add(uField_1);
 
 
-        // update button
-        Button updateButton = new Button("Update");
+        // add button
+        Button addButton = new Button("Add");
+        addButton.setOnAction(event -> {
+            new Machine(uField_1.getText());
+        });
 
         // error label
         Label errorLabel = new Label("Error: password is wrong");
-        layout.getChildren().addAll(updateButton, errorLabel);
+        layout.getChildren().addAll(addButton, errorLabel);
         //#endregion ------------------------------------------------------
 
         //#region Styles ----------------- Do not touch -----------------
         titleLabel.getStyleClass().add("title__primary");
-        updateButton.getStyleClass().add("button__primary");
+        addButton.getStyleClass().add("button__primary");
         errorLabel.getStyleClass().add("error-label");
         subtitleLabel.getStyleClass().add("sub-title__primary");
         //#endregion ------------------------- Do not touch -----------------
@@ -61,8 +65,11 @@ public class EditPage_Machine extends BorderPane {
         splitPane.setDividerPositions(0.7);
         //#endregion -------------------------------------------------------
 
+
+
         setCenter(splitPane);
     }
+
 
 
 
