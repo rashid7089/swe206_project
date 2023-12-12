@@ -17,9 +17,9 @@ import java.util.ArrayList;
 public class Main extends Application {
 
 
-   public void setPage(String page) {
+   public static void setPage(Stage primaryStage, String page) {
        if(page.equals("Projects")){
-        primaryStage.setScene();
+//            primaryStage.setScene();
 
        }       
        else if (page.equals("Teams")){
