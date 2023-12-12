@@ -14,8 +14,6 @@ public class Project {
     private HashMap<Machine, ArrayList<Reservation>> machines;
     private Team team;
 
-
-
     public Project(String projectName){ // for creating project without team, delete it later
         this.projectName = projectName;
         machines = new HashMap<>();
@@ -54,6 +52,13 @@ public class Project {
 
     public Team getTeam() {
         return team;
+    }
+
+    public int getMachineCount() {
+        int machineCount = 0;
+        for(ArrayList<Reservation> machine: machines.values())
+            machineCount += machine.size();
+        return machineCount;
     }
 
     public static void load() throws FileNotFoundException {
