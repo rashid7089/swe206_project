@@ -1,5 +1,6 @@
 package frontend;
 
+import Classes.Admin;
 import Classes.Machine;
 import Classes.Member;
 import Classes.Team;
@@ -48,6 +49,10 @@ public class ReserverMachine extends BorderPane {
         Day.getStyleClass().addAll("input__primary", "input__primary--mxWidth");
 
 
+
+//        ArrayList<Team> teams;
+//        Member loged_user = (Member) Main.loged_user;
+
         // Create a list members names
         ObservableList<String> teams_options = FXCollections.observableArrayList(Team.teamList.keySet());
         ObservableList<String> machines_options = FXCollections.observableArrayList(Machine.machineList.keySet());
@@ -59,12 +64,13 @@ public class ReserverMachine extends BorderPane {
 
         int currentMonth = LocalDate.now().getMonthValue();
         ArrayList<Integer> possibleMonths = new ArrayList<>();
-        for (int i = currentMonth; i <= 12; i++) possibleMonths.add(currentMonth);
+        for (int i = currentMonth; i <= 12; i++) possibleMonths.add(i);
         ObservableList<Integer> months_options = FXCollections.observableArrayList(possibleMonths);
 
         int currentDay = LocalDate.now().getDayOfMonth();
         ArrayList<Integer> possibleDays = new ArrayList<>();
-        for (int i = currentDay; i <= LocalDate.now().lengthOfMonth(); i++) possibleDays.add(currentDay);
+        System.out.println(LocalDate.now().lengthOfMonth());
+        for (int i = currentDay; i <= LocalDate.now().lengthOfMonth(); i++) possibleDays.add(i);
         ObservableList<Integer> days_options = FXCollections.observableArrayList(possibleDays);
 
 

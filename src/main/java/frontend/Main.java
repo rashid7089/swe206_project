@@ -11,11 +11,13 @@ import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.lang.reflect.Array;
 import java.util.ArrayList;
+import java.util.List;
 
 public class Main extends Application {
 
     public static User loged_user;
 
+    public static ArrayList<String> cssClasses;
     // Create the scene
     private static Scene login_scene;
     private static Scene projectPage_scene;
@@ -63,44 +65,25 @@ public class Main extends Application {
             primaryStage.setScene(editpage_project_scene);
 
         }
+        else if(page.equals("Reserve a Machine")){
+            primaryStage.setScene(reserveMachine_scene);
+
+        }
+
 
     }
-    @Override
-    public void start(Stage primaryStage) throws IOException {
-        this.primaryStage = primaryStage;
-
-        primaryStage.setWidth(Constants.laptopWidth);
-        primaryStage.setHeight(Constants.laptopHeight);
-
-        // title of the window
-        primaryStage.setTitle("Panel");
-
-        // TODO: add user object here
-//        Member user = new Member()
 
 
+    public static void LoadPages() { // needed so pages can load after loged user initalized
 
-
-        // TODO: change the following function to get user teams (or all teams if user is admin)
         ArrayList<Team> teams_data = generateDumyTeamList();
-
-        // demo data
-        // TODO: change the following projects to what user can see
-//        ArrayList<Project> projects_data = user.allProject(); EXAMPLE
-
         ArrayList<Project> projects_data = new ArrayList<>();
-//        projects_data.add(new Project("Project A", teams_data.get(0)));
-////        projects_data.add(new Project("Project B"));
-////        projects_data.add(new Project("Project C"));
 
         ArrayList<Machine> machineArrayList = new ArrayList<>();
         machineArrayList.add(new Machine("Machine1"));
         machineArrayList.add(new Machine("Machine2"));
         machineArrayList.add(new Machine("Machine3"));
 
-
-        //#region pages --------------------------------------------------------
-        Login loginPage = new Login();
         Projects projectsPage = new Projects(projects_data);
         Teams teamsPage = new Teams(teams_data);
         Machines ourmachinesPage = new Machines(machineArrayList, "Our Reserved Machines");
@@ -113,10 +96,7 @@ public class Main extends Application {
         EditPage_Project editpage_project = new EditPage_Project();
         ReserverMachine reserverMachine = new ReserverMachine();
 
-        //#endregion
-
         // Create the scene
-        login_scene = new Scene(loginPage, Constants.laptopWidth, Constants.laptopHeight);
         projectPage_scene = new Scene(projectsPage, Constants.laptopWidth, Constants.laptopHeight);
         teamsPage_scene = new Scene(teamsPage, Constants.laptopWidth, Constants.laptopHeight);
         ourmachinesPage_scene = new Scene(ourmachinesPage, Constants.laptopWidth, Constants.laptopHeight);
@@ -126,10 +106,8 @@ public class Main extends Application {
         editpage_team_scene = new Scene(editpage_team, Constants.laptopWidth, Constants.laptopHeight);
         editpage_project_scene = new Scene(editpage_project, Constants.laptopWidth, Constants.laptopHeight);
         reserveMachine_scene = new Scene(reserverMachine, Constants.laptopWidth, Constants.laptopHeight);
-        String[] cssClasses = {getClass().getResource("styles.css").toExternalForm(), getClass().getResource("sidebar.css").toExternalForm()};
 
         // load Styles Files
-        login_scene.getStylesheets().addAll(cssClasses);
         projectPage_scene.getStylesheets().addAll(cssClasses);
         teamsPage_scene.getStylesheets().addAll(cssClasses);
         ourmachinesPage_scene.getStylesheets().addAll(cssClasses);
@@ -140,13 +118,29 @@ public class Main extends Application {
         editpage_project_scene.getStylesheets().addAll(cssClasses);
         reserveMachine_scene.getStylesheets().addAll(cssClasses);
 
+    }
+    @Override
+    public void start(Stage primaryStage) throws IOException {
+        this.primaryStage = primaryStage;
+
+        primaryStage.setWidth(Constants.laptopWidth);
+        primaryStage.setHeight(Constants.laptopHeight);
+
+        // title of the window
+        primaryStage.setTitle("Panel");
+
+        cssClasses = new ArrayList<>(List.of(getClass().getResource("styles.css").toExternalForm(), getClass().getResource("sidebar.css").toExternalForm()));
+
+        Login loginPage = new Login();
+        login_scene = new Scene(loginPage, Constants.laptopWidth, Constants.laptopHeight);
+        login_scene.getStylesheets().addAll(cssClasses);
+
         // Set up the stage
-        // TODO: make the scene page dynamic (changeable)
         primaryStage.setScene(login_scene);
         primaryStage.show();
     }
 
-    public ArrayList<Team> generateDumyTeamList() {
+    public static ArrayList<Team> generateDumyTeamList() {
         // Dummy data
         Member member1 = new Member("user1", "password1",  "John Doe");
         Member member2 = new Member("user2", "password2",  "Jane Doe");

@@ -3,7 +3,9 @@ package Classes;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.PrintWriter;
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Scanner;
 
 public class User {
@@ -24,7 +26,9 @@ public class User {
     public String getPassword() {
         return password;
     }
-
+    public ArrayList<String> allowedPages() {
+        return new ArrayList<>(List.of("Projects", "Teams", "Machines", "Our Reserved Machines", "Reserve a Machine"));
+    }
     public static User login(String user, String pass) {
         if(user.equals(Admin.admin.getUser_name())) {
             if (pass.equals(Admin.admin.getPassword()))
