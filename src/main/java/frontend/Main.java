@@ -25,6 +25,9 @@ public class Main extends Application {
     private static Scene machinesPage_scene ;
     private static Scene editpage_scene;
     private static Scene editpage_machine_scene;
+    private static Scene editpage_team_scene;
+    private static Scene editpage_project_scene;
+
     private static Stage primaryStage;
 
     public static void setPage(String page) {
@@ -37,7 +40,7 @@ public class Main extends Application {
 
         }
         else if (page.equals("Logout")){
-            primaryStage.setScene(login_scene);
+//            primaryStage.setScene(login_scene);
 
         }
         else if (page.equals("OurMachines")) {
@@ -102,7 +105,8 @@ public class Main extends Application {
         // edit pages
         EditPage editpage = new EditPage();
         EditPage_Machine editpage_machine = new EditPage_Machine();
-
+        EditPage_Team editpage_team = new EditPage_Team();
+        EditPage_Project editpage_project = new EditPage_Project();
 
         //#endregion
 
@@ -114,7 +118,8 @@ public class Main extends Application {
         machinesPage_scene = new Scene(machinesPage, Constants.laptopWidth, Constants.laptopHeight);
         editpage_scene = new Scene(editpage, Constants.laptopWidth, Constants.laptopHeight);
         editpage_machine_scene = new Scene(editpage_machine, Constants.laptopWidth, Constants.laptopHeight);
-
+        editpage_team_scene = new Scene(editpage_team, Constants.laptopWidth, Constants.laptopHeight);
+        editpage_project_scene = new Scene(editpage_project, Constants.laptopWidth, Constants.laptopHeight);
 
         System.out.println(projectPage_scene);
         String[] cssClasses = {getClass().getResource("styles.css").toExternalForm(), getClass().getResource("sidebar.css").toExternalForm()};
@@ -127,9 +132,12 @@ public class Main extends Application {
         machinesPage_scene.getStylesheets().addAll(cssClasses);
         editpage_scene.getStylesheets().addAll(cssClasses);
         editpage_machine_scene.getStylesheets().addAll(cssClasses);
+        editpage_team_scene.getStylesheets().addAll(cssClasses);
+        editpage_project_scene.getStylesheets().addAll(cssClasses);
+
         // Set up the stage
         // TODO: make the scene page dynamic (changeable)
-        primaryStage.setScene(projectPage_scene);
+        primaryStage.setScene(editpage_project_scene);
         primaryStage.show();
     }
 
