@@ -80,7 +80,7 @@ public class EditPage_Project extends BorderPane {
         //#endregion -------------------------------------------------------
 
         if (!team_box.equals("add a Team")){
-            Team team = Team.teamList.get(team_box);
+            Team team = Team.teamList.get(team_box.getValue());
             addButton.setOnAction(event -> {
                 String projecttName = uField_1.getText();
                 Project existingProject = Project.projects.get(projecttName);
