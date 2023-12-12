@@ -76,6 +76,7 @@ public class Main extends Application {
 
         // edit pages
         EditPage editpage = new EditPage();
+        EditPage_Machine editpage_machine = new EditPage_Machine();
 
 
         //#endregion
@@ -88,6 +89,7 @@ public class Main extends Application {
         Scene ourmachinesPage_scene = new Scene(ourmachinesPage, Constants.laptopWidth, Constants.laptopHeight);
         Scene machinesPage_scene = new Scene(machinesPage, Constants.laptopWidth, Constants.laptopHeight);
         Scene editpage_scene = new Scene(editpage, Constants.laptopWidth, Constants.laptopHeight);
+        Scene editpage_machine_scene = new Scene(editpage_machine, Constants.laptopWidth, Constants.laptopHeight);
 
 
 
@@ -103,7 +105,7 @@ public class Main extends Application {
 
         // Set up the stage
         // TODO: make the scene page dynamic (changeable)
-        primaryStage.setScene(editpage_scene);
+        primaryStage.setScene(editpage_machine_scene);
         primaryStage.show();
     }
 

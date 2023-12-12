@@ -4,6 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
+<<<<<<< Updated upstream
     <list default="true" id="8bd04ad4-515e-48b5-b1e1-766bc9fc29f4" name="Changes" comment="Fixed the loading method">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/data/teams.txt" beforeDir="false" afterPath="$PROJECT_DIR$/data/teams.txt" afterDir="false" />
@@ -13,6 +14,14 @@
       <change beforePath="$PROJECT_DIR$/src/main/java/Classes/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Classes/User.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/frontend/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/frontend/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/frontend/Sidebar.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/frontend/Sidebar.java" afterDir="false" />
+=======
+    <list default="true" id="8bd04ad4-515e-48b5-b1e1-766bc9fc29f4" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/frontend/EditPage_Machine.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/frontend/EditPage_Machine.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/frontend/Machines.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/frontend/Machines.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/frontend/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/frontend/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/frontend/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/frontend/styles.css" afterDir="false" />
+>>>>>>> Stashed changes
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -22,6 +31,7 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
+        <option value="CSS File" />
         <option value="Class" />
       </list>
     </option>
@@ -40,6 +50,7 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
+<<<<<<< Updated upstream
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "RunOnceActivity.OpenProjectViewOnStart": "true",
@@ -56,9 +67,36 @@
 }]]></component>
   <component name="RunManager" selected="Application.User">
     <configuration name="HelloApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+=======
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/Users/rashedjafry/Documents/GitHub/swe206_project&quot;,
+    &quot;list.type.of.created.stylesheet&quot;: &quot;CSS&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  }
+}</component>
+  <component name="RecentsManager">
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="frontend" />
+    </key>
+  </component>
+  <component name="RunManager">
+    <configuration name="Template" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+>>>>>>> Stashed changes
       <option name="ALTERNATIVE_JRE_PATH" value="20" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
-      <option name="MAIN_CLASS_NAME" value="frontend.HelloApplication" />
+      <option name="MAIN_CLASS_NAME" value="frontend.Template" />
       <module name="swe206_project" />
       <extension name="coverage">
         <pattern>
@@ -85,8 +123,12 @@
     </configuration>
     <recent_temporary>
       <list>
+<<<<<<< Updated upstream
         <item itemvalue="Application.User" />
         <item itemvalue="Application.HelloApplication" />
+=======
+        <item itemvalue="Application.Template" />
+>>>>>>> Stashed changes
       </list>
     </recent_temporary>
   </component>
@@ -102,7 +144,8 @@
       <workItem from="1702312632785" duration="49000" />
       <workItem from="1702312688262" duration="162000" />
       <workItem from="1702313076236" duration="50000" />
-      <workItem from="1702313211511" duration="93000" />
+      <workItem from="1702313211511" duration="11285000" />
+      <workItem from="1702365653134" duration="9282000" />
     </task>
     <task id="LOCAL-00001" summary="Fixed the loading method">
       <option name="closed" value="true" />
@@ -126,15 +169,19 @@
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
+<<<<<<< Updated upstream
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Fixed the loading method" />
     <option name="LAST_COMMIT_MESSAGE" value="Fixed the loading method" />
     <option name="GROUP_MULTIFILE_MERGE_BY_DIRECTORY" value="true" />
   </component>
+=======
+>>>>>>> Stashed changes
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
+<<<<<<< Updated upstream
           <url>file://$PROJECT_DIR$/src/main/java/Classes/Machine.java</url>
           <line>45</line>
           <option name="timeStamp" value="7" />
@@ -163,6 +210,11 @@
           <url>file://$PROJECT_DIR$/src/main/java/Classes/Team.java</url>
           <line>16</line>
           <option name="timeStamp" value="12" />
+=======
+          <url>file://$PROJECT_DIR$/src/main/java/frontend/Main.java</url>
+          <line>81</line>
+          <option name="timeStamp" value="1" />
+>>>>>>> Stashed changes
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
