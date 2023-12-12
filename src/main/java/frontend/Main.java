@@ -137,7 +137,7 @@ public class Main extends Application {
 
         // Set up the stage
         // TODO: make the scene page dynamic (changeable)
-        primaryStage.setScene(editpage_project_scene);
+        primaryStage.setScene(projectPage_scene);
         primaryStage.show();
     }
 

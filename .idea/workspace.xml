@@ -4,86 +4,26 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-<<<<<<< Updated upstream
-    <list default="true" id="8bd04ad4-515e-48b5-b1e1-766bc9fc29f4" name="Changes" comment="Fixed the loading method">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/teams.txt" beforeDir="false" afterPath="$PROJECT_DIR$/data/teams.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/users.txt" beforeDir="false" afterPath="$PROJECT_DIR$/data/users.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Classes/Admin.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Classes/Admin.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Classes/Member.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Classes/Member.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Classes/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Classes/User.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/frontend/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/frontend/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/frontend/Sidebar.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/frontend/Sidebar.java" afterDir="false" />
-=======
-    <list default="true" id="8bd04ad4-515e-48b5-b1e1-766bc9fc29f4" name="Changes" comment="">
+    <list default="true" id="abe20fe9-d84c-4f69-aa1e-41cf5faa25e3" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/frontend/EditPage_Machine.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/frontend/EditPage_Machine.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/frontend/Machines.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/frontend/Machines.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/frontend/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/frontend/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/frontend/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/frontend/styles.css" afterDir="false" />
->>>>>>> Stashed changes
+      <change beforePath="$PROJECT_DIR$/src/main/java/frontend/Projects.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/frontend/Projects.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/frontend/Teams.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/frontend/Teams.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="FileTemplateManagerImpl">
-    <option name="RECENT_TEMPLATES">
-      <list>
-        <option value="CSS File" />
-        <option value="Class" />
-      </list>
-    </option>
-  </component>
-  <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
-  </component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "associatedIndex": 3
-}]]></component>
-  <component name="ProjectId" id="2ZP5D7AYFS9kYm5XodjbIYy3Gqf" />
   <component name="ProjectLevelVcsManager">
     <ConfirmationsSetting value="1" id="Add" />
   </component>
-  <component name="ProjectViewState">
-    <option name="hideEmptyMiddlePackages" value="true" />
-    <option name="showLibraryContents" value="true" />
-  </component>
-<<<<<<< Updated upstream
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "git-widget-placeholder": "main",
-    "last_opened_file_path": "C:/Users/engmr/OneDrive/Desktop/KFUPM/SWE 206/swe206_project",
-    "nodejs_package_manager_path": "npm",
-    "project.structure.last.edited": "SDKs",
-    "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.2",
-    "vue.rearranger.settings.migration": "true"
-  }
-}]]></component>
-  <component name="RunManager" selected="Application.User">
-    <configuration name="HelloApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-=======
   <component name="PropertiesComponent">{
   &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
     &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/Users/rashedjafry/Documents/GitHub/swe206_project&quot;,
-    &quot;list.type.of.created.stylesheet&quot;: &quot;CSS&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;
   }
 }</component>
   <component name="RecentsManager">
@@ -91,132 +31,7 @@
       <recent name="frontend" />
     </key>
   </component>
-  <component name="RunManager">
-    <configuration name="Template" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
->>>>>>> Stashed changes
-      <option name="ALTERNATIVE_JRE_PATH" value="20" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
-      <option name="MAIN_CLASS_NAME" value="frontend.Template" />
-      <module name="swe206_project" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="frontend.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="User" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="Classes.User" />
-      <module name="swe206_project" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="Classes.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <recent_temporary>
-      <list>
-<<<<<<< Updated upstream
-        <item itemvalue="Application.User" />
-        <item itemvalue="Application.HelloApplication" />
-=======
-        <item itemvalue="Application.Template" />
->>>>>>> Stashed changes
-      </list>
-    </recent_temporary>
-  </component>
-  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
-    <task active="true" id="Default" summary="Default task">
-      <changelist id="8bd04ad4-515e-48b5-b1e1-766bc9fc29f4" name="Changes" comment="" />
-      <created>1702310750767</created>
-      <option name="number" value="Default" />
-      <option name="presentableId" value="Default" />
-      <updated>1702310750767</updated>
-      <workItem from="1702310751868" duration="142000" />
-      <workItem from="1702312632785" duration="49000" />
-      <workItem from="1702312688262" duration="162000" />
-      <workItem from="1702313076236" duration="50000" />
-      <workItem from="1702313211511" duration="11285000" />
-      <workItem from="1702365653134" duration="9282000" />
-    </task>
-    <task id="LOCAL-00001" summary="Fixed the loading method">
-      <option name="closed" value="true" />
-      <created>1702389640402</created>
-      <option name="number" value="00001" />
-      <option name="presentableId" value="LOCAL-00001" />
-      <option name="project" value="LOCAL" />
-      <updated>1702389640402</updated>
-    </task>
-    <task id="LOCAL-00002" summary="Fixed the loading method">
-      <option name="closed" value="true" />
-      <created>1702389756297</created>
-      <option name="number" value="00002" />
-      <option name="presentableId" value="LOCAL-00002" />
-      <option name="project" value="LOCAL" />
-      <updated>1702389756297</updated>
-    </task>
-    <option name="localTasksCounter" value="3" />
     <servers />
-  </component>
-  <component name="TypeScriptGeneratedFilesManager">
-    <option name="version" value="3" />
-  </component>
-<<<<<<< Updated upstream
-  <component name="VcsManagerConfiguration">
-    <MESSAGE value="Fixed the loading method" />
-    <option name="LAST_COMMIT_MESSAGE" value="Fixed the loading method" />
-    <option name="GROUP_MULTIFILE_MERGE_BY_DIRECTORY" value="true" />
-  </component>
-=======
->>>>>>> Stashed changes
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-<<<<<<< Updated upstream
-          <url>file://$PROJECT_DIR$/src/main/java/Classes/Machine.java</url>
-          <line>45</line>
-          <option name="timeStamp" value="7" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/Classes/Project.java</url>
-          <line>62</line>
-          <option name="timeStamp" value="8" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/Classes/Team.java</url>
-          <line>92</line>
-          <option name="timeStamp" value="9" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/Classes/User.java</url>
-          <line>25</line>
-          <option name="timeStamp" value="10" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/Classes/Team.java</url>
-          <line>88</line>
-          <option name="timeStamp" value="11" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/Classes/Team.java</url>
-          <line>16</line>
-          <option name="timeStamp" value="12" />
-=======
-          <url>file://$PROJECT_DIR$/src/main/java/frontend/Main.java</url>
-          <line>81</line>
-          <option name="timeStamp" value="1" />
->>>>>>> Stashed changes
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
   </component>
 </project>

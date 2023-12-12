@@ -71,7 +71,7 @@ public class Machines extends BorderPane {
                 BorderPane cellPane = new BorderPane();
                 cellPane.setTop(titleLabel);
                 cellPane.setLeft(machinesStatus);
-                cellPane.setRight(detailsButton);
+//                cellPane.setRight(detailsButton);
 
                 setText(null);
                 setGraphic(cellPane);
