@@ -57,7 +57,8 @@ public class EditPage_Project extends BorderPane {
         Button addButton = new Button("Create New");
 
         // error label
-        Label errorLabel = new Label("Error: password is wrong");
+        Label errorLabel = new Label("Error: project is already exists");
+        errorLabel.setVisible(false);
         layout.getChildren().addAll(addButton, errorLabel);
         //#endregion ------------------------------------------------------
 
@@ -80,7 +81,17 @@ public class EditPage_Project extends BorderPane {
 
         if (!team_box.equals("add a Team")){
             Team team = Team.teamList.get(team_box);
-            addButton.setOnAction(event -> new Project(uField_1.getText(),team));
+            addButton.setOnAction(event -> {
+                String projecttName = uField_1.getText();
+                Project existingProject = Project.projects.get(projecttName);
+
+                if (existingProject == null) {
+                    Project newProject = new Project(projecttName,team);
+                } else {
+                    errorLabel.setVisible(true);
+
+                }
+            });
         }
 
         setCenter(splitPane);
