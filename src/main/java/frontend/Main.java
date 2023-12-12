@@ -1,5 +1,6 @@
 package frontend;
 
+import Classes.Machine;
 import Classes.Member;
 import Classes.Project;
 import Classes.Team;
@@ -41,27 +42,43 @@ public class Main extends Application {
             projects_data.add(new Project("Project C"));
 
         // TODO: change the following function to get user teams (or all teams if user is admin)
-//        ArrayList<Team> teams_data = generateDumyTeamList();
+        ArrayList<Team> teams_data = generateDumyTeamList();
+
+
+        ArrayList<Machine> machineArrayList = new ArrayList<>();
+            machineArrayList.add(new Machine("Machine1"));
+            machineArrayList.add(new Machine("Machine2"));
+            machineArrayList.add(new Machine("Machine3"));
 
 
         // pages
         Login loginPage = new Login();
         Projects projectsPage = new Projects(projects_data);
-//        Teams teamsPage = new Teams(teams_data);
+        Teams teamsPage = new Teams(teams_data);
+        Machines ourmachinesPage = new Machines(machineArrayList, "Our Reserved Machines");
+        Machines machinesPage = new Machines(machineArrayList, "Machines");
 
         // Create the scene
         Scene login_scene = new Scene(loginPage, Constants.laptopWidth, Constants.laptopHeight);
         Scene projectPage_scene = new Scene(projectsPage, Constants.laptopWidth, Constants.laptopHeight);
-        
+        Scene teamsPage_scene = new Scene(teamsPage, Constants.laptopWidth, Constants.laptopHeight);
+        Scene ourmachinesPage_scene = new Scene(ourmachinesPage, Constants.laptopWidth, Constants.laptopHeight);
+        Scene machinesPage_scene = new Scene(machinesPage, Constants.laptopWidth, Constants.laptopHeight);
+
         // load Styles Files
         login_scene.getStylesheets().add(getClass().getResource("styles.css").toExternalForm());
-        login_scene.getStylesheets().add(getClass().getResource("sidebar.css").toExternalForm());
         projectPage_scene.getStylesheets().add(getClass().getResource("styles.css").toExternalForm());
         projectPage_scene.getStylesheets().add(getClass().getResource("sidebar.css").toExternalForm());
+        teamsPage_scene.getStylesheets().add(getClass().getResource("styles.css").toExternalForm());
+        teamsPage_scene.getStylesheets().add(getClass().getResource("sidebar.css").toExternalForm());
+        ourmachinesPage_scene.getStylesheets().add(getClass().getResource("styles.css").toExternalForm());
+        ourmachinesPage_scene.getStylesheets().add(getClass().getResource("sidebar.css").toExternalForm());
+        machinesPage_scene.getStylesheets().add(getClass().getResource("styles.css").toExternalForm());
+        machinesPage_scene.getStylesheets().add(getClass().getResource("sidebar.css").toExternalForm());
 
         // Set up the stage
         // TODO: make the scene page dynamic (changeable)
-        primaryStage.setScene(login_scene);
+        primaryStage.setScene(ourmachinesPage_scene);
         primaryStage.show();
     }
 

@@ -1,6 +1,6 @@
 package frontend;
 
-import Classes.Project;
+import Classes.Machine;
 import Classes.Team;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -10,24 +10,24 @@ import javafx.scene.layout.VBox;
 
 import java.util.ArrayList;
 
-public class Teams extends BorderPane {
+public class Machines extends BorderPane {
 
 
-    public Teams(ArrayList<Team> all_teams) {
+    public Machines(ArrayList<Machine> all_machines, String Title) {
 
-        // ---------- Teams Left menu -----------------------------
-        ListView<Team> data_listView = new ListView<>();
+        // ---------- Machines Left menu -----------------------------
+        ListView<Machine> data_listView = new ListView<>();
 
-        ObservableList<Team> teams = FXCollections.observableArrayList(all_teams);
+        ObservableList<Machine> machines = FXCollections.observableArrayList(all_machines);
 
-        data_listView.setItems(teams);
+        data_listView.setItems(machines);
         data_listView.setCellFactory(param -> new DataListCell());
         data_listView.setMinHeight(Constants.laptopHeight);
         // -----------------------------------------------------------
 
         // Sidebar ------- No need to modify anything here  -------------------------------
         VBox sub_sidebar = new VBox(data_listView);
-        Sidebar sidebar = new Sidebar("Teams");
+        Sidebar sidebar = new Sidebar(Title);
 
         SplitPane splitPane = new SplitPane();
         splitPane.getItems().addAll(sidebar, sub_sidebar);
@@ -37,43 +37,36 @@ public class Teams extends BorderPane {
         setCenter(splitPane);
     }
 
-    private static class DataListCell extends ListCell<Team> {
+    private static class DataListCell extends ListCell<Machine> {
         @Override
-        protected void updateItem(Team team, boolean empty) {
-            super.updateItem(team, empty);
+        protected void updateItem(Machine machine, boolean empty) {
+            super.updateItem(machine, empty);
 
-            if (empty || team == null) {
+            if (empty || machine == null) {
                 setText(null);
                 setGraphic(null);
             } else {
-                VBox hbox = new VBox(10);
-                Label titleLabel = new Label(team.getName());
-                Label leaderLabel = new Label("Leader: " + team.getLeader());
-                Label projectsLabel = new Label("Projects: " + team.getNumberOfProjects());
+                Label titleLabel = new Label(machine.toString());
+                Label machinesStatus = new Label("Reserved Status: Free");
                 Button detailsButton = new Button("More Details");
 
                 // Styles ----------------- Do not touch -----------------
                 titleLabel.getStyleClass().add("list__item__title");
-                leaderLabel.getStyleClass().add("list__item__text");
-                projectsLabel.getStyleClass().add("list__item__text");
+                machinesStatus.getStyleClass().add("list__item__text");
                 detailsButton.getStyleClass().add("list__item__button");
-//                detailsButton.getStyleClass().add("btn");
-
-//                errorLabel.getStyleClass().add("error-label");
                 // ------------------------- Do not touch -----------------
 
 
                 detailsButton.setOnAction(event -> {
                     // Handle button click, e.g., show more details
-                    System.out.println("Details for " + team.getName());
+                    System.out.println("Details for " + machine);
                 });
 
 
                 // Layout the cell content
                 BorderPane cellPane = new BorderPane();
                 cellPane.setTop(titleLabel);
-                hbox.getChildren().addAll(leaderLabel, projectsLabel);
-                cellPane.setLeft(hbox);
+                cellPane.setLeft(machinesStatus);
                 cellPane.setRight(detailsButton);
 
                 setText(null);

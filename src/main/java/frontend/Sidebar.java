@@ -10,7 +10,7 @@ import java.util.ArrayList;
 public class Sidebar extends VBox {
 
     public Sidebar(String currentPage) {
-        String[] Titles = {"Home Page", "Projects", "Teams", "Logout"};
+        String[] Titles = {"Projects", "Teams", "Logout", "Machines", "Our Reserved Machines"};
         getStyleClass().add("sidebar");
 
         Label titleLabel = new Label("SIDEBAR");

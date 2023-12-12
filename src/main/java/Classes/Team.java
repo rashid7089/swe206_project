@@ -17,6 +17,8 @@ public class Team {
         this.leader = leader;
         leader.addLeader(this);
         this.teamName = teamName;
+        members = new ArrayList<>();
+        projects = new ArrayList<>();
         teamList.put(teamName, this);
     }
 
