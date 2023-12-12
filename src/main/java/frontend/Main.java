@@ -66,12 +66,20 @@ public class Main extends Application {
             machineArrayList.add(new Machine("Machine3"));
 
 
-        // pages
+        //#region pages --------------------------------------------------------
         Login loginPage = new Login();
         Projects projectsPage = new Projects(projects_data);
         Teams teamsPage = new Teams(teams_data);
         Machines ourmachinesPage = new Machines(machineArrayList, "Our Reserved Machines");
         Machines machinesPage = new Machines(machineArrayList, "Machines");
+
+
+        // edit pages
+        EditPage editpage = new EditPage();
+
+
+        //#endregion
+
 
         // Create the scene
         Scene login_scene = new Scene(loginPage, Constants.laptopWidth, Constants.laptopHeight);
@@ -79,21 +87,23 @@ public class Main extends Application {
         Scene teamsPage_scene = new Scene(teamsPage, Constants.laptopWidth, Constants.laptopHeight);
         Scene ourmachinesPage_scene = new Scene(ourmachinesPage, Constants.laptopWidth, Constants.laptopHeight);
         Scene machinesPage_scene = new Scene(machinesPage, Constants.laptopWidth, Constants.laptopHeight);
+        Scene editpage_scene = new Scene(editpage, Constants.laptopWidth, Constants.laptopHeight);
+
+
+
+        String[] cssClasses = {getClass().getResource("styles.css").toExternalForm(), getClass().getResource("sidebar.css").toExternalForm()};
 
         // load Styles Files
-        login_scene.getStylesheets().add(getClass().getResource("styles.css").toExternalForm());
-        projectPage_scene.getStylesheets().add(getClass().getResource("styles.css").toExternalForm());
-        projectPage_scene.getStylesheets().add(getClass().getResource("sidebar.css").toExternalForm());
-        teamsPage_scene.getStylesheets().add(getClass().getResource("styles.css").toExternalForm());
-        teamsPage_scene.getStylesheets().add(getClass().getResource("sidebar.css").toExternalForm());
-        ourmachinesPage_scene.getStylesheets().add(getClass().getResource("styles.css").toExternalForm());
-        ourmachinesPage_scene.getStylesheets().add(getClass().getResource("sidebar.css").toExternalForm());
-        machinesPage_scene.getStylesheets().add(getClass().getResource("styles.css").toExternalForm());
-        machinesPage_scene.getStylesheets().add(getClass().getResource("sidebar.css").toExternalForm());
+        login_scene.getStylesheets().addAll(cssClasses);
+        projectPage_scene.getStylesheets().addAll(cssClasses);
+        teamsPage_scene.getStylesheets().addAll(cssClasses);
+        ourmachinesPage_scene.getStylesheets().addAll(cssClasses);
+        machinesPage_scene.getStylesheets().addAll(cssClasses);
+        editpage_scene.getStylesheets().addAll(cssClasses);
 
         // Set up the stage
         // TODO: make the scene page dynamic (changeable)
-        primaryStage.setScene(ourmachinesPage_scene);
+        primaryStage.setScene(editpage_scene);
         primaryStage.show();
     }
 
