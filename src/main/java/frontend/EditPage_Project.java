@@ -1,5 +1,6 @@
 package frontend;
 
+import Classes.Admin;
 import Classes.Member;
 import Classes.Project;
 import Classes.Team;
@@ -59,7 +60,12 @@ public class EditPage_Project extends BorderPane {
         // error label
         Label errorLabel = new Label("Error: project is already exists");
         errorLabel.setVisible(false);
-        layout.getChildren().addAll(addButton, errorLabel);
+
+        Label successLabel = new Label("Succesfully created");
+        successLabel.setVisible(false);
+
+        layout.getChildren().addAll(addButton, errorLabel, successLabel);
+
         //#endregion ------------------------------------------------------
 
         //#region Styles ----------------- Do not touch -----------------
@@ -79,21 +85,25 @@ public class EditPage_Project extends BorderPane {
         splitPane.setDividerPositions(0.7);
         //#endregion -------------------------------------------------------
 
-        if (!team_box.equals("add a Team")){
-            Team team = Team.teamList.get(team_box.getValue());
-            addButton.setOnAction(event -> {
+        addButton.setOnAction(event -> {
+            if (!team_box.getValue().equals("add a Team")){
+                Team team = Team.teamList.get(team_box.getValue());
                 String projecttName = uField_1.getText();
                 Project existingProject = Project.projects.get(projecttName);
 
                 if (existingProject == null) {
                     errorLabel.setVisible(false);
-                    Project newProject = new Project(projecttName,team);
+                    ((Admin) Main.loged_user).createProject(projecttName,team);
+                    successLabel.setVisible(true);
                 } else {
                     errorLabel.setVisible(true);
-
                 }
-            });
-        }
+            }
+            else {
+                errorLabel.setVisible(true);
+            }
+        });
+
 
         setCenter(splitPane);
     }

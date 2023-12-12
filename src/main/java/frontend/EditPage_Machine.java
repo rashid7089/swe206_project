@@ -1,5 +1,6 @@
 package frontend;
 
+import Classes.Admin;
 import Classes.Machine;
 import javafx.geometry.Insets;
 import javafx.scene.control.Button;
@@ -46,8 +47,11 @@ public class EditPage_Machine extends BorderPane {
         // error label
         Label errorLabel = new Label("Error: the machine is already exists");
         errorLabel.setVisible(false);
-        layout.getChildren().addAll(addButton, errorLabel);
-        //#endregion ------------------------------------------------------
+
+        Label successLabel = new Label("Succesfully created");
+        successLabel.setVisible(false);
+
+        layout.getChildren().addAll(addButton, errorLabel, successLabel);        //#endregion ------------------------------------------------------
 
         //#region Styles ----------------- Do not touch -----------------
         titleLabel.getStyleClass().add("title__primary");
@@ -73,7 +77,8 @@ public class EditPage_Machine extends BorderPane {
 
             if (existingMachine == null) {
                 errorLabel.setVisible(false);
-                Machine newMachine = new Machine(machineName);
+                ((Admin) Main.loged_user).addMachine(machineName);
+                successLabel.setVisible(true);
             } else {
                 errorLabel.setVisible(true);
 
