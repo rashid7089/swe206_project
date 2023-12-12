@@ -17,8 +17,8 @@ public class Machine {
         machineSchedule = new ArrayList<>();
         machineList.put(machineName, this);
     }
-    public boolean reserve(Project p, Date s, Date f) {
-        Reservation r = new Reservation(p, s, f);
+    public boolean reserve(Project p, Date d) {
+        Reservation r = new Reservation(p, d);
         for(Reservation rs: machineSchedule)
             if(r.conflict(rs))
                 return false;
@@ -49,9 +49,8 @@ public class Machine {
             while(resCount-- > 0) {
                 in.nextLine();
                 Project p = Project.projects.get(in.nextLine());
-                Date start = new Date(in.nextInt(), in.nextInt(), in.nextInt(), in.nextInt());
-                Date finish = new Date(in.nextInt(), in.nextInt(), in.nextInt(), in.nextInt());
-                m.reserve(p, start, finish);
+                Date d = new Date(in.nextInt(), in.nextInt(), in.nextInt());
+                m.reserve(p, d);
             }
         }
     }

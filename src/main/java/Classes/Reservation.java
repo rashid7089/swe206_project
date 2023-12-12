@@ -1,15 +1,14 @@
 package Classes;
 
 public class Reservation {
-    private Date start, finish;
+    private Date day;
     private Project project;
-    public Reservation(Project p, Date s, Date f) {
+    public Reservation(Project p, Date d) {
         project = p;
-        start = s;
-        finish = f;
+         day = d;
     }
     public boolean conflict(Reservation r) {
-        return finish.compareTo(r.start) > 0 & r.finish.compareTo(start) > 0;
+        return day.compareTo(r.day) == 0;
     }
 
     public Project getProject() {
@@ -18,6 +17,6 @@ public class Reservation {
 
     @Override
     public String toString() {
-        return project.getName() + '\n' + start.toString() + ' ' + finish.toString();
+        return project.getName() + '\n' + day.toString();
     }
 }
