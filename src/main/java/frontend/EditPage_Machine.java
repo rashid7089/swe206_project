@@ -72,6 +72,7 @@ public class EditPage_Machine extends BorderPane {
             Machine existingMachine = Machine.machineList.get(machineName);
 
             if (existingMachine == null) {
+                errorLabel.setVisible(false);
                 Machine newMachine = new Machine(machineName);
             } else {
                 errorLabel.setVisible(true);

@@ -1,6 +1,7 @@
 package frontend;
 
 import Classes.Member;
+import Classes.Project;
 import Classes.Team;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -76,7 +77,7 @@ public class EditPage_Team extends BorderPane {
         Button addButton = new Button("Add");
 
         // error label
-        Label errorLabel = new Label("Error: password is wrong");
+        Label errorLabel = new Label("Error: team is already exists or memebers are duplicated");
         errorLabel.setVisible(false);
         layout.getChildren().addAll(addButton, errorLabel);
         //#endregion ------------------------------------------------------
@@ -98,6 +99,8 @@ public class EditPage_Team extends BorderPane {
         splitPane.setDividerPositions(0.7);
         //#endregion -------------------------------------------------------
 
+
+
         if (leader.equals(member_1) || leader.equals(member_2) || leader.equals(member_3)){
             errorLabel.setVisible(true);}
         else if (member_1.equals(member_2) || member_1.equals(member_3)){
@@ -106,30 +109,31 @@ public class EditPage_Team extends BorderPane {
         else if (member_2.equals(member_3)){
                 errorLabel.setVisible(true);
             }
-        else{
+        else {
             Member mLeader = Member.memberList.get(leader);
             Member member1 = Member.memberList.get(member_1);
             Member member2 = Member.memberList.get(member_2);
+            Member member3 = Member.memberList.get(member_3);
 
-            if (!member_3.equals("add a third Member")) {
-                    Member member3 = Member.memberList.get(member_3);
-                addButton.setOnAction(e -> {
-                    Team team = new Team(uField_1.getText(), mLeader);
-                    team.addMember(member1);
-                    team.addMember(member2);
-                    team.addMember(member3);
-                });
+            addButton.setOnAction(e -> {
+                String team = uField_1.getText();
+                Team existingTeam = Team.teamList.get(team);
 
+                if (existingTeam == null) {
+                    errorLabel.setVisible(false);
+                    Team newTeam = new Team(team, mLeader);
+                    newTeam.addMember(member1);
+                    newTeam.addMember(member2);
+                    if (!member_3.equals("add a third Member")) {
+                        newTeam.addMember(member3);
+                    }
+                } else {
+                    errorLabel.setVisible(true);
                 }
-            else {
 
-                addButton.setOnAction(e -> {
-                    Team team = new Team(uField_1.getText(), mLeader);
-                    team.addMember(member1);
-                    team.addMember(member2);
-                });
-            }
-            }
+
+            });
+        }
 
 
         setCenter(splitPane);
@@ -138,3 +142,4 @@ public class EditPage_Team extends BorderPane {
 
 
 }
+
