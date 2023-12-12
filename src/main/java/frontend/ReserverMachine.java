@@ -59,12 +59,13 @@ public class ReserverMachine extends BorderPane {
 
         int currentMonth = LocalDate.now().getMonthValue();
         ArrayList<Integer> possibleMonths = new ArrayList<>();
-        for (int i = currentMonth; i <= 12; i++) possibleMonths.add(currentMonth);
+        for (int i = currentMonth; i <= 12; i++) possibleMonths.add(i);
         ObservableList<Integer> months_options = FXCollections.observableArrayList(possibleMonths);
 
         int currentDay = LocalDate.now().getDayOfMonth();
         ArrayList<Integer> possibleDays = new ArrayList<>();
-        for (int i = currentDay; i <= LocalDate.now().lengthOfMonth(); i++) possibleDays.add(currentDay);
+        System.out.println(LocalDate.now().lengthOfMonth());
+        for (int i = currentDay; i <= LocalDate.now().lengthOfMonth(); i++) possibleDays.add(i);
         ObservableList<Integer> days_options = FXCollections.observableArrayList(possibleDays);
 
 

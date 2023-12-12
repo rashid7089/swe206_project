@@ -63,6 +63,10 @@ public class Main extends Application {
             primaryStage.setScene(editpage_project_scene);
 
         }
+        else if(page.equals("Reserve a Machine")){
+            primaryStage.setScene(reserveMachine_scene);
+
+        }
 
     }
     @Override
